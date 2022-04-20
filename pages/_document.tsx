@@ -45,36 +45,50 @@ export default class MyDocument extends Document {
             rel="preload"
             href="/fonts/NunitoSans/NunitoSans-ExtraLight.ttf"
             as="font"
+            type="font/ttf"
+            crossOrigin=""
           />
           <link
             rel="preload"
             href="/fonts/NunitoSans/NunitoSans-Light.ttf"
             as="font"
+            type="font/ttf"
+            crossOrigin=""
           />
           <link
             rel="preload"
             href="/fonts/NunitoSans/NunitoSans-Regular.ttf"
             as="font"
+            type="font/ttf"
+            crossOrigin=""
           />
           <link
             rel="preload"
             href="/fonts/NunitoSans/NunitoSans-SemiBold.ttf"
             as="font"
+            type="font/ttf"
+            crossOrigin=""
           />
           <link
             rel="preload"
             href="/fonts/NunitoSans/NunitoSans-Bold.ttf"
             as="font"
+            type="font/ttf"
+            crossOrigin=""
           />
           <link
             rel="preload"
             href="/fonts/NunitoSans/NunitoSans-ExtraBold.ttf"
             as="font"
+            type="font/ttf"
+            crossOrigin=""
           />
           <link
             rel="preload"
             href="/fonts/NunitoSans/NunitoSans-Black.ttf"
             as="font"
+            type="font/ttf"
+            crossOrigin=""
           />
         </Head>
         <body>
