@@ -11,13 +11,19 @@
     "pre-commit": "npm run lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.0",
     "@types/styled-components": "^5.1.25",
+    "@xstate/react": "^3.0.0",
+    "formik": "^2.2.9",
     "next": "12.1.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-headroom": "^3.2.0",
     "react-icons": "^4.3.1",
-    "styled-components": "^5.3.5"
+    "react-spinners": "^0.11.0",
+    "styled-components": "^5.3.5",
+    "xstate": "^4.31.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/node": "17.0.23",
