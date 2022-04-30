@@ -30,3 +30,7 @@ export interface ContactFieldProps {
   }>;
   visibility: string;
 }
+
+export interface resetFormType {
+  resetForm: () => void;
+}
