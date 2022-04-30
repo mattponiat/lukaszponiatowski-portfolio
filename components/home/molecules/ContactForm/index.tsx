@@ -2,68 +2,165 @@ import * as React from "react";
 //Styled-components
 import styled from "styled-components";
 //Components
-import ContactFormLabel from "components-ui/home/atoms/ContactFormLabel";
-import Input from "components-ui/home/atoms/Input";
+import ContactFieldName from "components/home/molecules/ContactFieldName";
+import ContactFieldEmail from "components/home/molecules/ContactFieldEmail";
+import ContactFieldTextArea from "components/home/molecules/ContactFieldTextArea";
+import ContactSuccess from "components-ui/home/molecules/ContactSuccess";
+import ContactError from "components-ui/home/molecules/ContactError";
+//Xstate
+import { createMachine } from "xstate";
+import { useMachine } from "@xstate/react";
+//Types
+import { FormValues } from "types";
+//Formik
+import { Form, Formik } from "formik";
+//Yup
+import * as Yup from "yup";
+//Loaders
+import BarLoader from "react-spinners/BarLoader";
+//Emotion
+import { css } from "@emotion/react";
+//Theme
+import theme from "theme/theme";
+
+const formMachine = createMachine({
+  id: "FormMachine",
+  initial: "Default",
+  states: {
+    Default: {
+      on: {
+        SEND: {
+          target: "#FormMachine.Loading",
+        },
+      },
+    },
+    Loading: {
+      on: {
+        ERROR: {
+          target: "#FormMachine.Error",
+        },
+        SUCCESS: {
+          target: "#FormMachine.Success",
+        },
+      },
+    },
+    Error: {
+      on: {
+        RESET: {
+          target: "#FormMachine.Default",
+        },
+      },
+    },
+    Success: {
+      on: {
+        RESET: {
+          target: "#FormMachine.Default",
+        },
+      },
+    },
+  },
+});
+
+type StateType = "Default" | "Loading" | "Error" | "Success";
 
 const ContactForm = () => {
-  const [count, setCount] = React.useState(0);
+  const [state, send] = useMachine(formMachine);
+  const visibility = ["Success", "Error"].includes(state.value as StateType)
+    ? "hidden"
+    : "visible";
+
+  const resetForm = () => send("RESET");
+
+  const handleOnSubmit = async (values: FormValues) => {
+    try {
+      send("SEND");
+      const response = await fetch(
+        "https://qd553leofc.execute-api.eu-west-3.amazonaws.com/default/sendEmailFromContactForm",
+        {
+          method: "POST",
+          body: JSON.stringify(values),
+        }
+      );
+      if (response.status === 200) {
+        send("SUCCESS");
+      } else {
+        send("ERROR");
+      }
+    } catch (err) {
+      send("ERROR");
+    }
+  };
 
   return (
-    <Wrapper>
-      <ContactFormLabel>Imię i nazwisko</ContactFormLabel>
-      <Input type="text" />
-      <ContactFormLabel>Email</ContactFormLabel>
-      <Input type="email" />
-      <ContactFormLabel>Wiadomość</ContactFormLabel>
-      <StyledTextArea
-        required
-        autoComplete="on"
-        minLength={10}
-        maxLength={150}
-        onChange={(e) => setCount(e.target.value.length)}
-      ></StyledTextArea>
-      <StyledSpan>{count} of 150 max characters</StyledSpan>
-      <StyledSubmit type="submit">WYŚLIJ</StyledSubmit>
-    </Wrapper>
+    <Formik
+      initialValues={{ email: "", message: "", name: "" }}
+      onSubmit={handleOnSubmit}
+      validationSchema={validationSchema}
+    >
+      {({ touched, errors }) => (
+        <StyledForm>
+          <ContactFieldName
+            touched={touched}
+            errors={errors}
+            visibility={visibility}
+          />
+          <ContactFieldEmail
+            touched={touched}
+            errors={errors}
+            visibility={visibility}
+          />
+          <ContactFieldTextArea
+            touched={touched}
+            errors={errors}
+            visibility={visibility}
+          />
+          {state.value === "Loading" ? (
+            <BarLoader
+              css={override}
+              color={theme.colors.text.homeHeading}
+              loading={true}
+            />
+          ) : (
+            <StyledSubmit visibility={visibility} type="submit">
+              WYŚLIJ
+            </StyledSubmit>
+          )}
+          {state.value === "Success" && (
+            <ContactSuccess resetForm={resetForm} />
+          )}
+          {state.value === "Error" && <ContactError resetForm={resetForm} />}
+        </StyledForm>
+      )}
+    </Formik>
   );
 };
 
-const Wrapper = styled.div`
+const validationSchema = Yup.object().shape({
+  name: Yup.string()
+    .required("Imię i nazwisko jest wymagane")
+    .min(3, "Wymagane są minimum 3 znaki")
+    .max(40, "Może być maksymalnie 40 znaków"),
+  email: Yup.string()
+    .required("Email jest wymagany")
+    .email("Niepoprawny email")
+    .min(3, "Wymagane są minimum 3 znaki")
+    .max(40, "Może być maksymalnie 40 znaków"),
+  message: Yup.string()
+    .required("Wiadomość jest wymagana")
+    .min(10, "Wymagane jest minimum 10 znaków")
+    .max(4000, "Może być maksymalnie 4000 znaków"),
+});
+
+const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: start;
   max-width: 488px;
   width: 100%;
-  min-height: inherit;
+  min-height: 100%;
+  position: relative;
 `;
 
-const StyledTextArea = styled.textarea`
-  max-width: 100%;
-  width: 100%;
-  min-height: 150px;
-  padding: 10px;
-  margin-bottom: 8px;
-  background-color: ${({ theme }) => theme.colors.darkGrey};
-  border: none;
-  border-radius: 2px;
-  color: ${({ theme }) => theme.colors.text.homeHeading};
-  font-size: ${({ theme }) => theme.font.size.medium};
-  font-family: ${({ theme }) => theme.font.family[700]};
-  resize: vertical;
-
-  :focus-visible {
-    outline: 1px groove ${({ theme }) => theme.colors.text.homeText};
-  }
-`;
-
-const StyledSpan = styled.span`
-  color: ${({ theme }) => theme.colors.text.header};
-  font-size: ${({ theme }) => theme.font.size.xsmall};
-  font-family: ${({ theme }) => theme.font.family[400]};
-`;
-
-const StyledSubmit = styled.button`
+const StyledSubmit = styled.button<{ visibility: string }>`
   align-self: center;
   padding: 15px;
   margin-top: 20px;
@@ -75,6 +172,12 @@ const StyledSubmit = styled.button`
   font-family: ${({ theme }) => theme.font.family[700]};
   letter-spacing: 2px;
   cursor: pointer;
+  visibility: ${(props) => props.visibility};
+`;
+
+const override = css`
+  display: block;
+  margin: 31px auto;
 `;
 
 export default ContactForm;
