@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   align-items: center;
   max-width: 100%;
   min-height: 60vh;
-  padding: 40px;
+  padding: 20px;
   background-color: ${({ theme }) => theme.colors.secondaryBg};
 `;
 
