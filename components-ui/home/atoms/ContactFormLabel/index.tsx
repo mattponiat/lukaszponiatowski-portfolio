@@ -1,9 +1,15 @@
 //Styled-components
 import styled from "styled-components";
 
-const ContactFormLabel = ({ children }: { children: React.ReactNode }) => {
+const ContactFormLabel = ({
+  children,
+  htmlFor,
+}: {
+  children: React.ReactNode;
+  htmlFor?: string;
+}) => {
   return (
-    <StyledLabel>
+    <StyledLabel htmlFor={htmlFor}>
       {children}
       <StyledSpan>*</StyledSpan>
     </StyledLabel>
@@ -11,7 +17,7 @@ const ContactFormLabel = ({ children }: { children: React.ReactNode }) => {
 };
 
 const StyledLabel = styled.label`
-  margin-bottom: 1px;
+  margin-bottom: 2px;
   color: ${({ theme }) => theme.colors.text.homeHeading};
   font-size: ${({ theme }) => theme.font.size.semiMedium};
   font-family: ${({ theme }) => theme.font.family[800]};
