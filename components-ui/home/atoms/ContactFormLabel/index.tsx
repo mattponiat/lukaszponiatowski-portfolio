@@ -20,7 +20,7 @@ const StyledLabel = styled.label`
   margin-bottom: 2px;
   color: ${({ theme }) => theme.colors.text.homeHeading};
   font-size: ${({ theme }) => theme.font.size.semiMedium};
-  font-family: ${({ theme }) => theme.font.family[800]};
+  font-weight: ${({ theme }) => theme.font.weight[800]};
   letter-spacing: 0.4px;
 `;
 

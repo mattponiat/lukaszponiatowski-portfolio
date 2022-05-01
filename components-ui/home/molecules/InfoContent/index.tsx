@@ -37,7 +37,7 @@ const TextWrapper = styled.div`
 const StyledHeading = styled.h1`
   color: ${({ theme }) => theme.colors.text.homeHeading};
   font-size: ${({ theme }) => theme.font.size.xxxlarge};
-  font-family: ${({ theme }) => theme.font.family[800]};
+  font-weight: ${({ theme }) => theme.font.weight[800]};
   letter-spacing: 1.5px;
   line-height: 53px;
 `;
@@ -47,7 +47,7 @@ const StyledAbout = styled.p`
 `;
 
 const StyledQuote = styled.p`
-  font-family: ${({ theme }) => theme.font.family[600]};
+  font-weight: ${({ theme }) => theme.font.weight[600]};
 `;
 
 export default InfoContent;

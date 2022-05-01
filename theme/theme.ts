@@ -13,14 +13,14 @@ const theme: DefaultTheme = {
       xxlarge: "32px",
       xxxlarge: "52px",
     },
-    family: {
-      200: "Nunito Sans ExtraLight",
-      300: "Nunito Sans Light",
-      400: "Nunito Sans Regular",
-      600: "Nunito Sans SemiBold",
-      700: "Nunito Sans Bold",
-      800: "Nunito Sans ExtraBold",
-      900: "Nunito Sans Black",
+    weight: {
+      200: 200,
+      300: 300,
+      400: 400,
+      600: 600,
+      700: 700,
+      800: 800,
+      900: 900,
     },
   },
 

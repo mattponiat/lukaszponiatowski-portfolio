@@ -31,7 +31,7 @@ const StyledText = styled.p`
   width: 100%;
   color: ${({ theme }) => theme.colors.text.homeHeading};
   font-size: ${({ theme }) => theme.font.size.large};
-  font-family: ${({ theme }) => theme.font.family[700]};
+  font-weight: ${({ theme }) => theme.font.weight[700]};
   letter-spacing: 2px;
 `;
 

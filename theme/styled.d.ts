@@ -14,14 +14,14 @@ declare module "styled-components" {
         xxlarge: string;
         xxxlarge: string;
       };
-      family: {
-        200: string;
-        300: string;
-        400: string;
-        600: string;
-        700: string;
-        800: string;
-        900: string;
+      weight: {
+        200: number;
+        300: number;
+        400: number;
+        600: number;
+        700: number;
+        800: number;
+        900: number;
       };
     };
     colors: {
