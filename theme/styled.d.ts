@@ -14,15 +14,6 @@ declare module "styled-components" {
         xxlarge: string;
         xxxlarge: string;
       };
-      weight: {
-        200: number;
-        300: number;
-        400: number;
-        600: number;
-        700: number;
-        800: number;
-        900: number;
-      };
     };
     colors: {
       mainBg: string;
