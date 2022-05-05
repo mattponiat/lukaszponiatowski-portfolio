@@ -42,7 +42,7 @@ const StyledTextArea = styled.textarea`
   border-radius: 2px;
   color: ${({ theme }) => theme.colors.text.homeHeading};
   font-size: ${({ theme }) => theme.font.size.medium};
-  font-weight: ${({ theme }) => theme.font.weight[700]};
+  font-weight: 700;
   resize: none;
 
   :focus-visible {
@@ -55,6 +55,7 @@ const StyledSpan = styled.span`
   color: ${({ theme }) => theme.colors.mainRed};
   font-size: ${({ theme }) => theme.font.size.xsmall};
   letter-spacing: 0.4px;
+  user-select: none;
 `;
 
 export default ContactFieldTextArea;

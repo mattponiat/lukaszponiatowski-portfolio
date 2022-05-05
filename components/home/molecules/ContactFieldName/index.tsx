@@ -37,6 +37,7 @@ const StyledSpan = styled.span`
   color: ${({ theme }) => theme.colors.mainRed};
   font-size: ${({ theme }) => theme.font.size.xsmall};
   letter-spacing: 0.4px;
+  user-select: none;
 `;
 
 export default ContactFieldName;
