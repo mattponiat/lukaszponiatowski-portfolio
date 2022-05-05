@@ -1,5 +1,7 @@
 //Styled-components
 import styled from "styled-components";
+//Radix-ui
+import * as LabelPrimitive from "@radix-ui/react-label";
 
 const ContactFormLabel = ({
   children,
@@ -16,11 +18,12 @@ const ContactFormLabel = ({
   );
 };
 
-const StyledLabel = styled.label`
-  margin-bottom: 2px;
-  color: ${({ theme }) => theme.colors.text.homeHeading};
+const StyledLabel = styled(LabelPrimitive.Root)`
   font-size: ${({ theme }) => theme.font.size.semiMedium};
-  font-weight: ${({ theme }) => theme.font.weight[800]};
+  font-weight: 800;
+  color: ${({ theme }) => theme.colors.text.homeHeading};
+  user-select: none;
+  margin-bottom: 2px;
   letter-spacing: 0.4px;
 `;
 
