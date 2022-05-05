@@ -18,7 +18,7 @@ const StyledInput = styled.input`
   border-radius: 2px;
   color: ${({ theme }) => theme.colors.text.homeHeading};
   font-size: ${({ theme }) => theme.font.size.medium};
-  font-weight: ${({ theme }) => theme.font.weight[700]};
+  font-weight: 700;
 
   :focus-visible {
     outline: 1px solid ${({ theme }) => theme.colors.text.homeText};

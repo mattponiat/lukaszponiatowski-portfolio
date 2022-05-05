@@ -24,7 +24,7 @@ const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   color: ${({ theme }) => theme.colors.text.homeHeading};
-  font-weight: ${({ theme }) => theme.font.weight[800]};
+  font-weight: 800;
   line-height: 0;
 `;
 

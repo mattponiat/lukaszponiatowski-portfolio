@@ -27,7 +27,7 @@ const Wrapper = styled.div`
 const StyledSpan = styled.span`
   margin-left: 25px;
   color: ${({ theme }) => theme.colors.text.homeHeading};
-  font-weight: ${({ theme }) => theme.font.weight[800]};
+  font-weight: 800;
   letter-spacing: 1px;
 `;
 

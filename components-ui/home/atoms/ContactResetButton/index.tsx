@@ -9,7 +9,7 @@ const ContactResetButton = styled.button`
   border-radius: 2px;
   color: ${({ theme }) => theme.colors.text.homeHeading};
   font-size: ${({ theme }) => theme.font.size.xxsmall};
-  font-weight: ${({ theme }) => theme.font.weight[700]};
+  font-weight: 700;
   letter-spacing: 2px;
   cursor: pointer;
 `;

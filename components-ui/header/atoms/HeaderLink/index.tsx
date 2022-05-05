@@ -19,7 +19,7 @@ const HeaderLink = ({
 const StyledLink = styled.a`
   padding: 24px 0;
   color: ${({ theme }) => theme.colors.text.header};
-  font-weight: ${({ theme }) => theme.font.weight[800]};
+  font-weight: 800;
   font-size: ${({ theme }) => theme.font.size.semiMedium};
   letter-spacing: 0.6px;
   text-decoration: none;
