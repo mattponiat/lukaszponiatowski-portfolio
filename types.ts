@@ -6,11 +6,6 @@ export interface HomeInfoSectionProps {
   about: string;
 }
 
-export interface HomeDescSectionProps {
-  desc1: string;
-  desc2: string;
-}
-
 export interface FormValues {
   name: string;
   email: string;
