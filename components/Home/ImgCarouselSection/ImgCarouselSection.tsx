@@ -14,6 +14,7 @@ const ImgCarouselSection = () => {
 const Wrapper = styled.section`
   max-width: 100%;
   min-height: fit-content;
+  margin-bottom: 34px;
 `;
 
 export { ImgCarouselSection };

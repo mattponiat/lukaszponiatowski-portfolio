@@ -9,7 +9,11 @@ const ImgCarousel = () => {
   const SlideProps = {
     transitionDuration: 500,
     easing: "cubic",
-    indicators: true,
+    indicators: () => (
+      <div className="each-slideshow-indicator">
+        <Dot />
+      </div>
+    ),
     scale: 1.2,
   };
 
@@ -48,14 +52,18 @@ const ImgCarousel = () => {
 
 const Wrapper = styled.div`
   padding: 10px;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    margin-right: 10px;
+  }
 `;
 
 const ImgWrapper = styled.div`
-  display: flex;
-  justify-content: center;
   width: 100%;
   height: 100%;
-  padding: 30px;
+  padding-inline: 30px;
 `;
 
 const StyledImage = styled.img`
@@ -63,7 +71,15 @@ const StyledImage = styled.img`
   height: 100%;
   aspect-ratio: 5/1.75;
   object-fit: cover;
-  height: 100%;
+`;
+
+const Dot = styled.span`
+  height: 8px;
+  width: 8px;
+  background-color: #000000;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
 `;
 
 export { ImgCarousel };
