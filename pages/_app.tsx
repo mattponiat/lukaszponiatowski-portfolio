@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 import theme from "theme/theme";
 import GlobalStyles from "theme/GlobalStyles";
 //Components
-import Layout from "components-ui/Layout";
+import { Layout } from "components/Layout/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
