@@ -24,7 +24,7 @@ const Wrapper = styled.section`
   padding: 30px;
   margin-bottom: 80px;
   background-color: ${({ theme }) => theme.colors.secondaryBg};
-  background-image: url("/images/home-info-section.webp");
+  background-image: url("https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/HomeBackgroundImg.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
