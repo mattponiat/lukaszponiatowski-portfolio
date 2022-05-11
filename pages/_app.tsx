@@ -3,16 +3,13 @@ import type { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
 import theme from "theme/theme";
 import GlobalStyles from "theme/GlobalStyles";
-//Components
-import { Layout } from "components/Layout/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const getLayout = Component.getLayout || ((page) => page);
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      {getLayout(<Component {...pageProps} />)}
     </ThemeProvider>
   );
 }
