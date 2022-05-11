@@ -23,7 +23,7 @@ const HomePage = () => {
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.main`
   min-height: 100vh;
   max-width: 100vw;
 `;
