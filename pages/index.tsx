@@ -1,9 +1,10 @@
-import type { NextPage } from "next";
+import { ReactChild, ReactFragment, ReactPortal } from "react";
+import type { NextPageWithLayout } from "next";
 import Head from "next/head";
 //Components
-import { HomePage } from "components/Home/HomePage";
+import { HomePage, HomeLayout } from "@components";
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
   return (
     <>
       <Head>
@@ -14,5 +15,9 @@ const Home: NextPage = () => {
     </>
   );
 };
+
+Home.getLayout = (
+  page: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined
+) => <HomeLayout>{page}</HomeLayout>;
 
 export default Home;
