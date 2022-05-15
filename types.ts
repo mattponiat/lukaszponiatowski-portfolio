@@ -1,6 +1,7 @@
 import { FormikErrors, FormikTouched } from "formik";
 
 export interface HomeInfoSectionProps {
+  titleSize: number;
   title: string;
   quote?: string;
   about: string;

@@ -6,10 +6,20 @@ import { InfoSocialMedia } from "components/Home/InfoSection/InfoSocialMedia";
 //Types
 import { HomeInfoSectionProps } from "types";
 
-const InfoSection = ({ title, quote, about }: HomeInfoSectionProps) => {
+const InfoSection = ({
+  titleSize,
+  title,
+  quote,
+  about,
+}: HomeInfoSectionProps) => {
   return (
     <Wrapper>
-      <InfoContent title={title} quote={quote} about={about} />
+      <InfoContent
+        titleSize={titleSize}
+        title={title}
+        quote={quote}
+        about={about}
+      />
       <InfoSocialMedia />
     </Wrapper>
   );

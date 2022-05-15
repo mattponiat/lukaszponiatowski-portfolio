@@ -3,10 +3,15 @@ import styled from "styled-components";
 //Types
 import { HomeInfoSectionProps } from "types";
 
-const InfoContent = ({ title, quote, about }: HomeInfoSectionProps) => {
+const InfoContent = ({
+  titleSize,
+  title,
+  quote,
+  about,
+}: HomeInfoSectionProps) => {
   return (
     <Wrapper>
-      <StyledHeading>{title}</StyledHeading>
+      <StyledHeading titleSize={titleSize}>{title}</StyledHeading>
       <TextWrapper>
         {quote ? (
           <StyledQuote>
@@ -34,9 +39,9 @@ const TextWrapper = styled.div`
   line-height: 25.2px;
 `;
 
-const StyledHeading = styled.h1`
+const StyledHeading = styled.h1<{ titleSize: number }>`
   color: ${({ theme }) => theme.colors.text.homeHeading};
-  font-size: ${({ theme }) => theme.font.size.xxxlarge};
+  font-size: ${({ titleSize }) => titleSize}px;
   font-weight: 800;
   letter-spacing: 1.5px;
   line-height: 53px;
