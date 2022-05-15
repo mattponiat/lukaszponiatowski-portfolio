@@ -1,7 +1,7 @@
 import * as React from "react";
 //Styled-components
 import styled from "styled-components";
-//React-image-gallery
+//React-slideshow-image
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
@@ -36,7 +36,7 @@ const ImgCarousel = () => {
   ];
 
   return (
-    <Wrapper>
+    <Wrapper onContextMenu={(e) => e.preventDefault()}>
       <Slide {...SlideProps}>
         {images.map((image, index) => {
           return (
