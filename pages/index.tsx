@@ -2,7 +2,7 @@ import { ReactChild, ReactFragment, ReactPortal } from "react";
 import type { NextPageWithLayout } from "next";
 import Head from "next/head";
 //Components
-import { HomePage, HomeLayout } from "@components";
+import { HomePage, Layout } from "@components";
 
 const Home: NextPageWithLayout = () => {
   return (
@@ -18,6 +18,6 @@ const Home: NextPageWithLayout = () => {
 
 Home.getLayout = (
   page: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined
-) => <HomeLayout>{page}</HomeLayout>;
+) => <Layout>{page}</Layout>;
 
 export default Home;

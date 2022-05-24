@@ -2,7 +2,7 @@ import Headroom from "react-headroom";
 //Components
 import { Header, Footer } from "@components";
 
-const FooterLayout = ({ children }: { children: React.ReactNode }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Headroom>
@@ -14,4 +14,4 @@ const FooterLayout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export { FooterLayout };
+export { Layout };

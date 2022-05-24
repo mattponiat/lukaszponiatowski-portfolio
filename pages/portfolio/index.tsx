@@ -2,7 +2,7 @@ import { ReactChild, ReactFragment, ReactPortal } from "react";
 import type { NextPageWithLayout } from "next";
 import Head from "next/head";
 //Components
-import { PortfolioPage, FooterLayout } from "@components";
+import { PortfolioPage, Layout } from "@components";
 //SRL
 import SimpleReactLightbox from "simple-react-lightbox";
 
@@ -20,6 +20,6 @@ const Portfolio: NextPageWithLayout = () => {
 
 Portfolio.getLayout = (
   page: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined
-) => <FooterLayout>{page}</FooterLayout>;
+) => <Layout>{page}</Layout>;
 
 export default Portfolio;
