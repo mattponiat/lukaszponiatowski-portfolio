@@ -8,12 +8,12 @@ const Navbar = () => {
     <Wrapper>
       <StyledLink href="/">HOME</StyledLink>
       <StyledLink href="/portfolio">PORTFOLIO</StyledLink>
-      <StyledLink href="/o-mnie">O MNIE</StyledLink>
+      <StyledLink href="/contact">KONTAKT</StyledLink>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
