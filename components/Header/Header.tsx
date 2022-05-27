@@ -19,6 +19,7 @@ const Wrapper = styled.header`
   max-width: 100%;
   min-height: 70px;
   background-color: ${({ theme }) => theme.colors.mainBg};
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
 export { Header };
