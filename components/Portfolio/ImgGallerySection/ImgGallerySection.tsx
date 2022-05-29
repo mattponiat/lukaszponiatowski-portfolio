@@ -15,6 +15,7 @@ const Wrapper = styled.section`
   max-width: 100%;
   min-height: 940px;
   margin-bottom: 65px;
+  margin-top: 60px;
 `;
 
 export { ImgGallerySection };
