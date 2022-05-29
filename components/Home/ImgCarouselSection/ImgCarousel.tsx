@@ -33,6 +33,9 @@ const ImgCarousel = () => {
     {
       url: "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgCarousel5.webp",
     },
+    {
+      url: "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgCarousel6.webp",
+    },
   ];
 
   return (
@@ -44,7 +47,7 @@ const ImgCarousel = () => {
               <StyledImage
                 draggable={false}
                 src={image.url}
-                alt="example images"
+                alt="Example images"
               />
             </ImgWrapper>
           );
@@ -56,6 +59,10 @@ const ImgCarousel = () => {
 
 const Wrapper = styled.div`
   padding: 10px;
+
+  @media screen and (max-width: 1024px) {
+    padding: 0;
+  }
 
   ul {
     padding: 0;
