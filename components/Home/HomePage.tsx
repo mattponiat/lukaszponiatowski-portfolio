@@ -1,12 +1,7 @@
 //Styled-components
 import styled from "styled-components";
 //Components
-import {
-  ContactSection,
-  InfoSection,
-  DescSection,
-  ImgCarouselSection,
-} from "@components";
+import { InfoSection, DescSection, ImgCarouselSection } from "@components";
 
 const HomePage = () => {
   return (
@@ -19,7 +14,6 @@ const HomePage = () => {
       />
       <ImgCarouselSection />
       <DescSection />
-      <ContactSection />
     </Wrapper>
   );
 };
