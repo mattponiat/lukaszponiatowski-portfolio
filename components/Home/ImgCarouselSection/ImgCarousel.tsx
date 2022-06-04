@@ -14,7 +14,6 @@ const ImgCarousel = () => {
         <Dot />
       </div>
     ),
-    scale: 1.2,
   };
 
   const images = [
@@ -67,7 +66,6 @@ const Wrapper = styled.div`
   ul {
     padding: 0;
     margin: 0;
-    margin-right: 10px;
   }
 `;
 
@@ -76,6 +74,10 @@ const ImgWrapper = styled.div`
   height: 100%;
   padding-inline: 30px;
   object-fit: cover;
+
+  @media screen and (max-width: 1024px) {
+    padding-inline: 0;
+  }
 `;
 
 const StyledImage = styled.img`
@@ -85,12 +87,12 @@ const StyledImage = styled.img`
 `;
 
 const Dot = styled.span`
+  display: inline-block;
   height: 7px;
   width: 7px;
+  margin: 0 5px;
   background-color: #000000;
   border-radius: 50%;
-  display: inline-block;
-  margin: 0 5px;
 `;
 
 export { ImgCarousel };

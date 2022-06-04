@@ -29,6 +29,11 @@ const Wrapper = styled.div`
   flex-direction: column;
   max-width: 1250px;
   width: 100%;
+
+  @media screen and (max-width: 1024px) {
+    max-width: 100%;
+    width: 100%;
+  }
 `;
 
 const TextWrapper = styled.div`
@@ -45,14 +50,32 @@ const StyledHeading = styled.h1<{ titleSize: number }>`
   font-weight: 800;
   letter-spacing: 1.5px;
   line-height: 53px;
+
+  @media screen and (max-width: 1024px) {
+    text-align: center;
+    font-size: ${({ theme }) => theme.font.size.xxlarge};
+    line-height: normal;
+  }
 `;
 
 const StyledAbout = styled.p`
   max-width: 68ch;
+
+  @media screen and (max-width: 1024px) {
+    max-width: fit-content;
+    text-align: center;
+    font-size: ${({ theme }) => theme.font.size.semiMedium};
+  }
 `;
 
 const StyledQuote = styled.p`
   font-weight: 600;
+
+  @media screen and (max-width: 1024px) {
+    text-align: center;
+    font-size: ${({ theme }) => theme.font.size.semiMedium};
+    color: ${({ theme }) => theme.colors.lightGrey};
+  }
 `;
 
 export { InfoContent };

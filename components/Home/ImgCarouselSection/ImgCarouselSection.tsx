@@ -16,6 +16,11 @@ const Wrapper = styled.section`
   min-height: fit-content;
   margin-bottom: 34px;
   margin-top: 70px;
+
+  @media screen and (max-width: 1024px) {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
 `;
 
 export { ImgCarouselSection };

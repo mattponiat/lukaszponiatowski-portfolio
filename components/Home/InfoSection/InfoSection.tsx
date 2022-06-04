@@ -30,7 +30,7 @@ const Wrapper = styled.section`
   align-items: center;
   justify-content: center;
   max-width: 100%;
-  min-height: 60vh;
+  min-height: 562px;
   padding: 30px;
   background-color: ${({ theme }) => theme.colors.secondaryBg};
   background-image: url("https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/HomeBackgroundImg.webp");
@@ -38,6 +38,11 @@ const Wrapper = styled.section`
   background-size: cover;
   background-position: center;
   background-blend-mode: color-dodge;
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
 `;
 
 export { InfoSection };
