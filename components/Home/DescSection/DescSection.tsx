@@ -13,9 +13,10 @@ const DescSection = () => {
 
 const Wrapper = styled.section`
   display: flex;
+  align-items: center;
   justify-content: center;
   max-width: 100%;
-  min-height: 40vh;
+  min-height: 370px;
   margin-bottom: 40px;
   background-color: ${({ theme }) => theme.colors.secondaryBg};
 `;
