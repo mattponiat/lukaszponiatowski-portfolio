@@ -40,7 +40,7 @@ const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   color: ${({ theme }) => theme.colors.text.homeText};
-  font-size: ${({ theme }) => theme.font.size.small};
+  font-size: ${({ theme }) => theme.font.size.semiMedium};
   line-height: 25.2px;
 `;
 
