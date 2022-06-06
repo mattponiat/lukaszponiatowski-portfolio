@@ -8,7 +8,7 @@ const Navbar = () => {
     <Wrapper>
       <StyledLink href="/">HOME</StyledLink>
       <StyledLink href="/portfolio">PORTFOLIO</StyledLink>
-      <StyledLink href="/contact">KONTAKT</StyledLink>
+      <StyledLink href="/kontakt">KONTAKT</StyledLink>
     </Wrapper>
   );
 };

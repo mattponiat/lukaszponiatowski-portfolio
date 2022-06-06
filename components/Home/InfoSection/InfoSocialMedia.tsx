@@ -17,7 +17,10 @@ const InfoSocialMedia = () => {
         icon={<FaFacebook />}
         href="https://www.facebook.com/%C5%81ukasz-Poniatowski-Fotografia-105409568850494"
       />
-      <SocialMediaIcon icon={<FaLinkedinIn />} href="https://linkedin.com/" />
+      <SocialMediaIcon
+        icon={<FaLinkedinIn />}
+        href="https://www.linkedin.com/in/%C5%82ukasz-poniatowski-6a5bb4238/"
+      />
     </Wrapper>
   );
 };
