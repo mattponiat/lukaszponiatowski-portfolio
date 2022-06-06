@@ -9,7 +9,7 @@ const PortfolioPage = () => {
       <InfoSection
         titleSize={80}
         title="PORTFOLIO"
-        about="Podczas reportażu działam dyskretnie i niepostrzeżenie, szukam szczegółów często niedocenianych lub pomijanych a w dużej mierze wpływających na finalny odbiór okoliczności. Pracuję nad własnym oryginalnym stylem wykorzystując rozmaitą paletę barw oraz coraz nowsze technologie z branży. Tworząc dla was album zależy mi na wszechstronnym oddaniu zastanego klimatu, na przedstawieniu waszych historii emocjami."
+        about="Podczas reportażu działam dyskretnie, niepostrzeżenie utrwalę wydarzenia nawet z samego środka akcji. Poluje na decydujące momenty, szczegóły pomijane oraz często niedoceniane, które w dużej mierze wpływają na finalny odbiór okoliczności. Tworząc dla was album, zależy mi na wszechstronnym oddaniu zastanego klimatu, na przedstawieniu waszych historii emocjami."
       />
       <ImgGallerySection />
     </Wrapper>
