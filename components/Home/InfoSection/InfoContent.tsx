@@ -60,6 +60,7 @@ const StyledHeading = styled.h1<{ titleSize: number }>`
 
 const StyledAbout = styled.p`
   max-width: 68ch;
+  color: ${({ theme }) => theme.colors.text.homeText};
 
   @media screen and (max-width: 1024px) {
     max-width: fit-content;

@@ -20,6 +20,7 @@ declare module "styled-components" {
       secondaryBg: string;
       darkGrey: string;
       darkGreyHover: string;
+      lightGrey: string;
       mainRed: string;
       text: {
         header: string;

@@ -20,12 +20,13 @@ const theme: DefaultTheme = {
     secondaryBg: "#0C0C0CFA",
     darkGrey: "#6E6E6E73",
     darkGreyHover: "#D2D2D2",
+    lightGrey: "#989898",
     mainRed: "#FF2800",
     text: {
       header: "#6D6D6DB3",
       headerHover: "#0C0C0CFA",
       homeHeading: "#F0F0F0",
-      homeText: "#7A7A7A",
+      homeText: "#878787",
     },
   },
 };
