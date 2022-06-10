@@ -8,6 +8,7 @@ import { FieldName } from "./FieldName";
 import { FieldEmail } from "./FieldEmail";
 import { FieldTextArea } from "./FieldTextArea";
 import { FormResetButton } from "./FormResetButton";
+import { StyledIcon } from "./StyledIcon";
 //Xstate
 import { createMachine } from "xstate";
 import { useMachine } from "@xstate/react";
@@ -21,6 +22,9 @@ import * as Yup from "yup";
 import BarLoader from "react-spinners/BarLoader";
 //Theme
 import theme from "theme/theme";
+//Icons
+import { FiInstagram } from "react-icons/fi";
+import { FaFacebook, FaLinkedinIn } from "react-icons/fa";
 
 const formMachine = createMachine({
   id: "FormMachine",
@@ -63,6 +67,8 @@ const formMachine = createMachine({
 type StateType = "Default" | "Loading" | "Error" | "Success";
 
 const ContactForm = () => {
+  const buttonRef = React.useRef<HTMLButtonElement>(null);
+  const inputRef = React.useRef<HTMLInputElement>(null);
   const [state, send] = useMachine(formMachine);
   const visibility = ["Success", "Error"].includes(state.value as StateType)
     ? "hidden"
@@ -74,7 +80,7 @@ const ContactForm = () => {
     try {
       send("SEND");
       const response = await fetch(
-        "https://qd553leofc.execute-api.eu-west-3.amazonaws.com/default/endEmailFromContactForm",
+        "https://qd553leofc.execute-api.eu-west-3.amazonaws.com/default/sendEmailFromContactForm",
         {
           method: "POST",
           body: JSON.stringify(values),
@@ -90,13 +96,22 @@ const ContactForm = () => {
     }
   };
 
+  React.useEffect(() => {
+    if (state.value === "Success" || state.value === "Error") {
+      buttonRef.current?.focus();
+    }
+    if (state.value === "Default") {
+      inputRef.current?.focus();
+    }
+  }, [state.value]);
+
   return (
     <Formik
       initialValues={{ email: "", message: "", name: "" }}
       onSubmit={handleOnSubmit}
       validationSchema={validationSchema}
     >
-      {({ touched, errors }) => (
+      {({ touched, errors, setFieldValue }) => (
         <StyledForm>
           <FieldName
             touched={touched}
@@ -113,10 +128,24 @@ const ContactForm = () => {
             errors={errors}
             visibility={visibility}
           />
+          <IconWrapper visibility={visibility}>
+            <StyledIcon
+              icon={<FiInstagram />}
+              href="https://www.instagram.com/poniatowskipl/"
+            />
+            <StyledIcon
+              icon={<FaFacebook />}
+              href="https://www.facebook.com/%C5%81ukasz-Poniatowski-Fotografia-105409568850494"
+            />
+            <StyledIcon
+              icon={<FaLinkedinIn />}
+              href="https://www.linkedin.com/in/%C5%82ukasz-poniatowski-6a5bb4238/"
+            />
+          </IconWrapper>
           {state.value === "Loading" ? (
             <BarLoader
               css={override}
-              color={theme.colors.text.homeHeading}
+              color={theme.colors.secondaryBg}
               loading={true}
             />
           ) : (
@@ -125,20 +154,28 @@ const ContactForm = () => {
             </StyledSubmit>
           )}
           {state.value === "Success" && (
-            <SuccessWrapper>
+            <AfterSubmitWrapper>
               <StyledText>Wiadomość została wysłana!</StyledText>
-              <FormResetButton type="reset" onClick={resetForm}>
+              <FormResetButton
+                onClick={() => {
+                  resetForm();
+                  setFieldValue("name", "", false);
+                  setFieldValue("email", "", false);
+                  setFieldValue("message", "", false);
+                }}
+                ref={buttonRef}
+              >
                 Wyślij ponownie
               </FormResetButton>
-            </SuccessWrapper>
+            </AfterSubmitWrapper>
           )}
           {state.value === "Error" && (
-            <ErrorWrapper>
+            <AfterSubmitWrapper>
               <StyledText>Ups, coś poszło nie tak!</StyledText>
-              <FormResetButton onClick={resetForm}>
+              <FormResetButton onClick={resetForm} ref={buttonRef}>
                 Wyślij ponownie
               </FormResetButton>
-            </ErrorWrapper>
+            </AfterSubmitWrapper>
           )}
         </StyledForm>
       )}
@@ -163,45 +200,40 @@ const validationSchema = Yup.object().shape({
 });
 
 const StyledForm = styled(Form)`
+  position: relative;
   display: flex;
   flex-direction: column;
-  max-width: 488px;
+  max-width: 600px;
   width: 100%;
-  min-height: 100%;
-  position: relative;
 `;
 
 const StyledSubmit = styled.button<{ visibility: string }>`
-  align-self: center;
+  align-self: start;
   padding: 15px;
-  margin-top: 20px;
-  background-color: ${({ theme }) => theme.colors.mainRed};
-  border: none;
+  background-color: ${({ theme }) => theme.colors.mainBg};
+  border: 2px solid ${({ theme }) => theme.colors.secondaryBg};
   border-radius: 2px;
-  color: ${({ theme }) => theme.colors.text.homeHeading};
+  color: ${({ theme }) => theme.colors.secondaryBg};
   font-size: ${({ theme }) => theme.font.size.xxsmall};
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 2px;
   cursor: pointer;
   visibility: ${(props) => props.visibility};
+  transition: background-color 0.3s, color 0.3s;
+
+  :hover,
+  :focus-visible {
+    background-color: ${({ theme }) => theme.colors.secondaryBg};
+    color: ${({ theme }) => theme.colors.mainBg};
+  }
 `;
 
 const override = css`
   display: block;
-  margin: 31px auto;
+  margin: 23px auto;
 `;
 
-const SuccessWrapper = styled.div`
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  place-self: center;
-  top: 30%;
-`;
-
-const ErrorWrapper = styled.div`
+const AfterSubmitWrapper = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -212,12 +244,22 @@ const ErrorWrapper = styled.div`
 `;
 
 const StyledText = styled.p`
-  max-width: 100%;
   width: 100%;
-  color: ${({ theme }) => theme.colors.text.homeHeading};
+  color: ${({ theme }) => theme.colors.secondaryBg};
   font-size: ${({ theme }) => theme.font.size.large};
   font-weight: 700;
   letter-spacing: 2px;
+`;
+
+const IconWrapper = styled.div<{ visibility: string }>`
+  position: absolute;
+  top: 427px;
+  place-self: end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  visibility: ${(props) => props.visibility};
 `;
 
 export { ContactForm };

@@ -1,19 +1,19 @@
 //Styled-components
 import styled from "styled-components";
 //Components
-import { ContactFormLabel } from "./ContactFormLabel";
+import { FormLabel } from "./FormLabel";
 import { Input } from "./Input";
 //Formik
 import { Field } from "formik";
 //Types
 import { ContactFieldProps } from "types";
 
-const FieldName = ({ touched, errors, visibility }: ContactFieldProps) => {
+const FieldEmail = ({ touched, errors, visibility }: ContactFieldProps) => {
   return (
     <Wrapper visibility={visibility}>
-      <ContactFormLabel htmlFor="name">Imię i nazwisko</ContactFormLabel>
-      <Field type="text" name="name" as={Input} />
-      <StyledSpan>{(touched.name && errors.name) ?? ""}</StyledSpan>
+      <FormLabel htmlFor="email">Email</FormLabel>
+      <Field type="email" name="email" as={Input} />
+      <StyledSpan>{(touched.email && errors.email) ?? ""}</StyledSpan>
     </Wrapper>
   );
 };
@@ -23,7 +23,6 @@ const Wrapper = styled.div<{ visibility: string }>`
   flex-direction: column;
   align-items: start;
   max-width: 100%;
-  width: 100%;
   margin-bottom: 15px;
   visibility: ${(props) => props.visibility};
 `;
@@ -36,4 +35,4 @@ const StyledSpan = styled.span`
   user-select: none;
 `;
 
-export { FieldName };
+export { FieldEmail };
