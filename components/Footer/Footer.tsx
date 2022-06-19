@@ -1,59 +1,70 @@
+import Link from "next/link";
 //Styled-components
 import styled from "styled-components";
 
 const Footer = () => {
   return (
     <Wrapper>
-      <TextWrapper>
-        <StyledTopText>SKONTAKTUJMY SIĘ</StyledTopText>
-        <StyledBottomText>NAPISZ A PRZEDSTAWIĘ CI OFERTĘ</StyledBottomText>
-      </TextWrapper>
-      <ContactInfoWrapper>
-        <span>+48 724241144</span>
-        <span>kontakt@lukaszponiatowski.pl</span>
-      </ContactInfoWrapper>
+      <StyledDivider />
+      <StyledSpan>
+        Created by{" "}
+        <Link href="https://github.com/mattponiat" passHref>
+          <StyledA target="_blank">Mateusz Poniatowski</StyledA>
+        </Link>
+      </StyledSpan>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.section`
+const Wrapper = styled.footer`
+  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  gap: 230px;
-  min-height: 204px;
+  justify-content: center;
+  min-height: 170px;
+  max-height: 170px;
   max-width: 100%;
-  padding: 0 20px;
+  padding: 0 30px;
   background-color: ${({ theme }) => theme.colors.secondaryBg};
   color: ${({ theme }) => theme.colors.text.homeHeading};
 `;
 
-const TextWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  max-width: 416px;
-`;
-
-const StyledTopText = styled.span`
-  font-size: ${({ theme }) => theme.font.size.xxlarge};
-  font-weight: 900;
-  line-height: 35px;
-  letter-spacing: 0.5px;
-`;
-
-const StyledBottomText = styled.span`
-  font-size: ${({ theme }) => theme.font.size.medium};
-  font-weight: 200;
-  letter-spacing: 0.3px;
-`;
-
-const ContactInfoWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  max-width: 450px;
+const StyledDivider = styled.div`
+  position: absolute;
   width: 100%;
-  font-weight: 100;
-  letter-spacing: 1px;
+  max-width: 600px;
+  border-top: 0.5px groove ${({ theme }) => theme.colors.lightGrey};
+  border-bottom: 0.5px groove ${({ theme }) => theme.colors.mainBg};
+
+  @media screen and (max-width: 630px) {
+    max-width: 450px;
+  }
+
+  @media screen and (max-width: 486px) {
+    max-width: 300px;
+  }
+
+  @media screen and (max-width: 330px) {
+    max-width: 220px;
+  }
+`;
+
+const StyledSpan = styled.span`
+  font-size: ${({ theme }) => theme.font.size.xsmall};
+  color: #787f85;
+  margin: auto 0 32px;
+  letter-spacing: 0.4px;
+`;
+
+const StyledA = styled.a`
+  color: #3694ff;
+  text-decoration: none;
+  transition: 0.2s color;
+
+  :hover {
+    color: #3694ffa2;
+  }
 `;
 
 export { Footer };
