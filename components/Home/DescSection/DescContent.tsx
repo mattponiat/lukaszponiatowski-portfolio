@@ -34,7 +34,7 @@ const Wrapper = styled.div`
     auto-fit,
     minmax(min(100%/2, max(450px, 100%/3)), 1fr)
   );
-  gap: 30px;
+  gap: 20px;
   max-width: 1350px;
   padding: 20px;
 `;
