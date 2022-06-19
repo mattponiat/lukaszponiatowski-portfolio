@@ -18,7 +18,7 @@ const Wrapper = styled.main<{ height: number }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(${(props) => props.height}px - 158.6px);
+  min-height: ${({ height }) => height}px;
   max-width: 100%;
 
   @media screen and (max-width: 1024px) {
