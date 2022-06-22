@@ -39,48 +39,52 @@ const Header = () => {
   });
 
   return (
-    <Wrapper>
-      {width <= 768 && isLoading === false ? (
-        <>
-          <StyledButton onClick={handleOpen}>
-            <StyledHamburgerIcon />
-          </StyledButton>
-          <Dialog
-            fullScreen
-            open={open}
-            onClose={handleClose}
-            TransitionComponent={Transition}
-          >
-            <StyledDialogContent>
-              <IconButton
-                size="medium"
-                onClick={handleClose}
-                aria-label="close"
-                style={{
-                  alignSelf: "end",
-                  margin: "10px 0",
-                }}
+    <EmptyWrapper>
+      {isLoading === false && (
+        <Wrapper>
+          {width <= 768 ? (
+            <>
+              <StyledButton onClick={handleOpen}>
+                <StyledHamburgerIcon />
+              </StyledButton>
+              <Dialog
+                fullScreen
+                open={open}
+                onClose={handleClose}
+                TransitionComponent={Transition}
               >
-                <StyledCloseIcon fontSize="large" color="inherit" />
-              </IconButton>
-              <StyledNavWrapper>
-                <StyledLink onClick={handleClose} href="/">
-                  HOME
-                </StyledLink>
-                <StyledLink onClick={handleClose} href="/portfolio">
-                  PORTFOLIO
-                </StyledLink>
-                <StyledLink onClick={handleClose} href="/kontakt">
-                  KONTAKT
-                </StyledLink>
-              </StyledNavWrapper>
-            </StyledDialogContent>
-          </Dialog>
-        </>
-      ) : (
-        <Navbar />
+                <StyledDialogContent>
+                  <IconButton
+                    size="medium"
+                    onClick={handleClose}
+                    aria-label="close"
+                    style={{
+                      alignSelf: "end",
+                      margin: "10px 0",
+                    }}
+                  >
+                    <StyledCloseIcon fontSize="large" color="inherit" />
+                  </IconButton>
+                  <StyledNavWrapper>
+                    <StyledLink onClick={handleClose} href="/">
+                      HOME
+                    </StyledLink>
+                    <StyledLink onClick={handleClose} href="/portfolio">
+                      PORTFOLIO
+                    </StyledLink>
+                    <StyledLink onClick={handleClose} href="/kontakt">
+                      KONTAKT
+                    </StyledLink>
+                  </StyledNavWrapper>
+                </StyledDialogContent>
+              </Dialog>
+            </>
+          ) : (
+            <Navbar />
+          )}
+        </Wrapper>
       )}
-    </Wrapper>
+    </EmptyWrapper>
   );
 };
 
@@ -97,7 +101,7 @@ const StyledHamburgerIcon = () => {
   );
 };
 
-const Wrapper = styled.header`
+const Wrapper = styled.div`
   display: flex;
   position: sticky;
   justify-content: center;
@@ -110,6 +114,13 @@ const Wrapper = styled.header`
   @media screen and (max-width: 768px) {
     justify-content: end;
   }
+`;
+
+const EmptyWrapper = styled.header`
+  max-width: 100%;
+  min-height: 70px;
+  background-color: ${({ theme }) => theme.colors.mainBg};
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
 const StyledButton = styled.button`
@@ -140,11 +151,11 @@ const StyledNavWrapper = styled.nav`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: auto 0 384.5px 0;
+  margin: auto;
 `;
 
 const StyledLink = styled.a`
-  margin: 10px 0;
+  margin: 15px 0;
   font-size: ${({ theme }) => theme.font.size.xlarge};
   color: ${({ theme }) => theme.colors.mainBg};
   letter-spacing: 1px;
