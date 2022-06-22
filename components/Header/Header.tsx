@@ -151,7 +151,7 @@ const StyledNavWrapper = styled.nav`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: auto;
+  margin: auto 0 365px 0;
 `;
 
 const StyledLink = styled.a`
