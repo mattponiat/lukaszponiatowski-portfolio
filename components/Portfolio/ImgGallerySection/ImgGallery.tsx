@@ -6,24 +6,30 @@ import { SRLWrapper } from "simple-react-lightbox";
 
 const ImgGallery = () => {
   const images = [
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/Image1.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/Image2.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/Image3.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/Image4.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/Image5.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/Image6.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/Image7.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/Image8.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/Image9.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/Image10.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/Image11.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/Image12.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/Image13.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/Image14.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/Image15.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/Image16.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/Image17.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/Image18.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/21.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/18.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/14.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/13.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/19.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/1.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/5.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/12.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/4.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/11.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/3.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/17.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/8.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/20.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/9.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/7.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/10.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/2.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/15.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/24.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/16.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/22.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/6.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/23.webp",
   ];
 
   return (
@@ -46,7 +52,7 @@ const ImgGallery = () => {
           <ImageWrapper key={index}>
             <Image
               src={image}
-              alt=""
+              alt="Gallery image"
               key={index}
               width={300}
               height={300}
