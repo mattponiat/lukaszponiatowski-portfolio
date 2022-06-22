@@ -22,6 +22,7 @@ const Transition = React.forwardRef(function Transition(
 });
 
 const Header = () => {
+  const [isLoading, setIsLoading] = React.useState(true);
   const [open, setOpen] = React.useState(false);
   const { width } = useWindowSize();
 
@@ -33,11 +34,13 @@ const Header = () => {
     setOpen(false);
   };
 
+  React.useEffect(() => {
+    setIsLoading(false);
+  });
+
   return (
     <Wrapper>
-      {width > 768 ? (
-        <Navbar />
-      ) : (
+      {width <= 768 && isLoading === false ? (
         <>
           <StyledButton onClick={handleOpen}>
             <StyledHamburgerIcon />
@@ -74,6 +77,8 @@ const Header = () => {
             </StyledDialogContent>
           </Dialog>
         </>
+      ) : (
+        <Navbar />
       )}
     </Wrapper>
   );
