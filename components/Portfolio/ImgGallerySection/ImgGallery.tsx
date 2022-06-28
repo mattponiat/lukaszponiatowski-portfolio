@@ -53,7 +53,7 @@ const ImgGallery = () => {
           <ImageWrapper key={index}>
             <Image
               src={image}
-              alt="Gallery image"
+              alt=""
               key={index}
               width={300}
               height={300}
