@@ -20,7 +20,7 @@ const HomePage = () => {
 
 const Wrapper = styled.main`
   min-height: 100vh;
-  max-width: 100vw;
+  max-width: 100%;
 `;
 
 export { HomePage };

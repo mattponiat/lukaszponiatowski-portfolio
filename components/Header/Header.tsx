@@ -7,7 +7,6 @@ import { Navbar } from "./Navbar";
 import { useWindowSize } from "usehooks-ts";
 //MUI
 import Dialog from "@mui/material/Dialog";
-import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
 import Fade from "@mui/material/Fade";
 import { TransitionProps } from "@mui/material/transitions";
