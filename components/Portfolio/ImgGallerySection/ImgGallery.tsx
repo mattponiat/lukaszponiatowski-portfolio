@@ -59,6 +59,7 @@ const ImgGallery = () => {
               height={300}
               layout="responsive"
               objectFit="cover"
+              priority
               sizes="(max-width: 767px) 250px, (max-width: 991px) 260px, 400px"
             />
           </ImageWrapper>
