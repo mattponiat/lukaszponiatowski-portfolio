@@ -3,34 +3,33 @@ import Image from "next/image";
 import styled from "styled-components";
 //SRL
 import { SRLWrapper } from "simple-react-lightbox";
-//asd
 
 const ImgGallery = () => {
   const images = [
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/1.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/2.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/3.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/4.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/5.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/6.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/7.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/8.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/9.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/10.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/11.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/12.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/13.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/14.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/15.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/16.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/17.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/18.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/19.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/20.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/21.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/22.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/23.webp",
-    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/24.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/1.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/2.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/3.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/4.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/5.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/6.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/7.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/8.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/9.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/10.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/11.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/12.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/13.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/14.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/15.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/16.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/17.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/18.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/19.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/20.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/21.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/22.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/23.webp",
+    "http://data.lukaszponiatowski.pl/ImgGallery/24.webp",
   ];
 
   return (
