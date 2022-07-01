@@ -18,22 +18,22 @@ const ImgCarousel = () => {
 
   const images = [
     {
-      url: "http://data.lukaszponiatowski.pl/ImgCarousel1.webp",
+      url: "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgCarousel1.webp",
     },
     {
-      url: "http://data.lukaszponiatowski.pl/ImgCarousel2.webp",
+      url: "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgCarousel2.webp",
     },
     {
-      url: "http://data.lukaszponiatowski.pl/ImgCarousel3.webp",
+      url: "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgCarousel3.webp",
     },
     {
-      url: "http://data.lukaszponiatowski.pl/ImgCarousel4.webp",
+      url: "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgCarousel4.webp",
     },
     {
-      url: "http://data.lukaszponiatowski.pl/ImgCarousel5.webp",
+      url: "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgCarousel5.webp",
     },
     {
-      url: "http://data.lukaszponiatowski.pl/ImgCarousel6.webp",
+      url: "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgCarousel6.webp",
     },
   ];
 
