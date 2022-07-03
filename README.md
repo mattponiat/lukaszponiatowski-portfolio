@@ -1,3 +1,11 @@
 # Portfolio website for a photographer
 
-<h1 align="center">Work in progress ✌️<h1/>
+Website made for my brother to advertise his work.
+
+## Built with:
+
+<ul>
+<li>NextJS</li>
+<li>styled-components</li>  
+<li>Formik</li>   
+</ul>
