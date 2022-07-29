@@ -13,7 +13,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="author" content="Łukasz Poniatowski" />
         <meta
           name="keywords"
-          content="lukasz, łukasz, poniatowski, lukasz poniatowski, łukasz poniatowski, fotografia, photography, portfolio, photographer, fotograf"
+          content="lukasz, łukasz, poniatowski, lukasz poniatowski, łukasz poniatowski, fotografia, photography, portfolio, photographer, fotograf, kalisz, fotograf kalisz, fotograf ślubny, fotograf ślubny kalisz"
+        />
+        <meta
+          name="description"
+          content="Fotograf z Kalisza z wrażliwym podejściem do barw, oprawi wasze emocje w niebanalną kompozycję"
         />
         <meta name="robots" content="index, follow" />
         <title>Łukasz Poniatowski Photography</title>
