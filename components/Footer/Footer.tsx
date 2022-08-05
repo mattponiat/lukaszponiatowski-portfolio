@@ -8,7 +8,7 @@ const Footer = () => {
       <StyledDivider />
       <StyledSpan>
         Created by{" "}
-        <Link href="https://github.com/mattponiat" passHref>
+        <Link href="https://www.mattponiat.pl/" passHref>
           <StyledA target="_blank">Mateusz Poniatowski</StyledA>
         </Link>
       </StyledSpan>
