@@ -11,7 +11,7 @@ const InfoSocialMedia = () => {
     <Wrapper>
       <SocialMediaIcon
         icon={<FiInstagram />}
-        href="https://www.instagram.com/poniatowskipl/"
+        href="https://www.instagram.com/lukaszponiatowski.pl/"
       />
       <SocialMediaIcon
         icon={<FaFacebook />}
