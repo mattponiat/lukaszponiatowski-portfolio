@@ -31,6 +31,22 @@ const ImgGallery = () => {
     "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/22.webp",
     "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/23.webp",
     "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/24.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/25.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/26.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/27.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/28.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/29.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/30.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/31.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/32.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/33.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/34.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/35.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/36.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/37.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/38.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/39.webp",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/40.webp",
   ];
 
   return (
@@ -60,6 +76,7 @@ const ImgGallery = () => {
               layout="responsive"
               objectFit="cover"
               priority
+              quality={100}
               sizes="(max-width: 767px) 250px, (max-width: 991px) 260px, 400px"
             />
           </ImageWrapper>
