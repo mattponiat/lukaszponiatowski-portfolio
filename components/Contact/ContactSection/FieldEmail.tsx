@@ -12,7 +12,7 @@ const FieldEmail = ({ touched, errors, visibility }: ContactFieldProps) => {
   return (
     <Wrapper visibility={visibility}>
       <FormLabel htmlFor="email">Email</FormLabel>
-      <Field type="email" name="email" as={Input} />
+      <Field type="email" name="email" id="email" as={Input} />
       <StyledSpan>{(touched.email && errors.email) ?? ""}</StyledSpan>
     </Wrapper>
   );

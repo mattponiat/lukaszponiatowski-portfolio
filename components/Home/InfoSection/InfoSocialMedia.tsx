@@ -12,14 +12,17 @@ const InfoSocialMedia = () => {
       <SocialMediaIcon
         icon={<FiInstagram />}
         href="https://www.instagram.com/lukaszponiatowski.pl/"
+        title="Instagram icon"
       />
       <SocialMediaIcon
         icon={<FaFacebook />}
         href="https://www.facebook.com/%C5%81ukasz-Poniatowski-Fotografia-105409568850494"
+        title="Facebook icon"
       />
       <SocialMediaIcon
         icon={<FaLinkedinIn />}
         href="https://www.linkedin.com/in/%C5%82ukasz-poniatowski-6a5bb4238/"
+        title="LinkedIn icon"
       />
     </Wrapper>
   );

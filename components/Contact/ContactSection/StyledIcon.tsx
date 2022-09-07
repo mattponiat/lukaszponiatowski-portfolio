@@ -5,13 +5,17 @@ import styled from "styled-components";
 const StyledIcon = ({
   icon,
   href,
+  title,
 }: {
   icon: React.ReactElement;
   href: string;
+  title: string;
 }) => {
   return (
     <Link href={href} passHref>
-      <StyledLink target="_blank">{icon}</StyledLink>
+      <StyledLink target="_blank" title={title}>
+        {icon}
+      </StyledLink>
     </Link>
   );
 };

@@ -11,7 +11,7 @@ const FieldTextArea = ({ touched, errors, visibility }: ContactFieldProps) => {
   return (
     <Wrapper visibility={visibility}>
       <FormLabel htmlFor="message">Wiadomość</FormLabel>
-      <Field type="text" name="message" as={StyledTextArea} />
+      <Field type="text" name="message" id="message" as={StyledTextArea} />
       <StyledSpan>{(touched.message && errors.message) ?? ""}</StyledSpan>
     </Wrapper>
   );

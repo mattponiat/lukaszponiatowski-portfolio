@@ -38,9 +38,9 @@ export default class MyDocument extends Document {
   }
   render(): React.ReactElement {
     return (
-      <Html lang="en">
+      <Html lang="pl-PL">
         <Head>
-          <meta lang="en"></meta>
+          <meta lang="pl-PL" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"

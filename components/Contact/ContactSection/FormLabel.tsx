@@ -10,7 +10,11 @@ const FormLabel = ({
   children: React.ReactNode;
   htmlFor?: string;
 }) => {
-  return <StyledLabel htmlFor={htmlFor}>{children}</StyledLabel>;
+  return (
+    <StyledLabel role="none" htmlFor={htmlFor}>
+      {children}
+    </StyledLabel>
+  );
 };
 
 const StyledLabel = styled(LabelPrimitive.Root)`

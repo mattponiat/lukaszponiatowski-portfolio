@@ -10,7 +10,7 @@ const ImgCarousel = () => {
     transitionDuration: 500,
     easing: "cubic",
     indicators: () => (
-      <div className="each-slideshow-indicator">
+      <div className="each-slideshow-indicator" role="listitem">
         <Dot />
       </div>
     ),
