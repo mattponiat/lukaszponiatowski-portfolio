@@ -30,3 +30,13 @@ export interface ContactFieldProps {
 export interface resetFormType {
   resetForm: () => void;
 }
+
+export interface pageType {
+  page:
+    | boolean
+    | React.ReactChild
+    | React.ReactFragment
+    | React.ReactPortal
+    | null
+    | undefined;
+}

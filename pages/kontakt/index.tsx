@@ -1,23 +1,34 @@
-import { ReactChild, ReactFragment, ReactPortal } from "react";
 import type { NextPageWithLayout } from "next";
 import Head from "next/head";
 //Components
 import { ContactPage, Layout } from "@components";
+//Types
+import { pageType } from "types";
 
 const Contact: NextPageWithLayout = () => {
   return (
     <>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Kontakt</title>
+        <meta name="description" content="Skontaktuj się ze mną" />
+        <meta property="og:title" content="Kontakt" />
+        <meta property="og:description" content="Skontaktuj się ze mną" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://lukaszponiatowski.pl/kontakt"
+        />
+        <meta
+          property="og:image"
+          content="https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/9.webp"
+        />
+        <meta property="og:image:alt" content="Banner image" />
       </Head>
       <ContactPage />
     </>
   );
 };
 
-Contact.getLayout = (
-  page: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined
-) => <Layout>{page}</Layout>;
+Contact.getLayout = (page: pageType) => <Layout>{page}</Layout>;
 
 export default Contact;

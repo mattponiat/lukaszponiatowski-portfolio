@@ -6,7 +6,7 @@ import { StyledLink } from "components/Header/StyledLink";
 const Navbar = () => {
   return (
     <Wrapper>
-      <StyledLink href="/">HOME</StyledLink>
+      <StyledLink href="/home">HOME</StyledLink>
       <StyledLink href="/portfolio">PORTFOLIO</StyledLink>
       <StyledLink href="/kontakt">KONTAKT</StyledLink>
     </Wrapper>

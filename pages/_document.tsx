@@ -41,6 +41,12 @@ export default class MyDocument extends Document {
       <Html lang="pl-PL">
         <Head>
           <meta lang="pl-PL" />
+          <meta name="author" content="Łukasz Poniatowski" />
+          <meta
+            name="keywords"
+            content="lukasz, łukasz, poniatowski, lukasz poniatowski, łukasz poniatowski, fotografia, photography, portfolio, photographer, fotograf, kalisz, fotograf kalisz, fotograf ślubny, fotograf ślubny kalisz"
+          />
+          <meta name="robots" content="index, follow" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
