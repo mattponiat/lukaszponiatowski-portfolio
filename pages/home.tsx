@@ -23,7 +23,7 @@ const Home: NextPageWithLayout = () => {
         <meta property="og:url" content="https://lukaszponiatowski.pl/home" />
         <meta
           property="og:image"
-          content="https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/9.webp"
+          content="https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgGallery/7.webp"
         />
         <meta property="og:image:alt" content="Banner image" />
       </Head>
