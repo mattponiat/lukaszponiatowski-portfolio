@@ -11,6 +11,7 @@
     "pre-commit": "npm run lint"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.7.0",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.8.3",

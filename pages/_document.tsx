@@ -57,6 +57,17 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap"
             rel="stylesheet"
           />
+          <script
+            data-partytown-config
+            dangerouslySetInnerHTML={{
+              __html: `
+          partytown = {
+            lib: "/_next/static/~partytown/",
+            forward: ["gtag"]           
+          };
+        `,
+            }}
+          />
         </Head>
         <body>
           <Main />

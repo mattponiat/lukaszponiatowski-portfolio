@@ -7,6 +7,9 @@ const nextConfig = {
   images: {
     domains: ["s3.eu-west-3.amazonaws.com"],
   },
+  experimental: {
+    nextScriptWorkers: true,
+  },
 };
 
 module.exports = nextConfig;
