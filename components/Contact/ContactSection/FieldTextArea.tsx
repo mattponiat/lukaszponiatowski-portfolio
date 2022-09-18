@@ -1,7 +1,7 @@
-//Styled-components
+//Styles
 import styled from "styled-components";
 //Components
-import { FormLabel } from "./FormLabel";
+import { FormLabel } from "@components";
 //Formik
 import { Field } from "formik";
 //Types

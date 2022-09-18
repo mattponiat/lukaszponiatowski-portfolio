@@ -1,7 +1,7 @@
-//Styled-components
+//Styles
 import styled from "styled-components";
 //Components
-import { StyledLink } from "components/Header/StyledLink";
+import { StyledLink } from "@components";
 
 const Navbar = () => {
   return (

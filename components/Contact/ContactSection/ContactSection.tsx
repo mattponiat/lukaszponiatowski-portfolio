@@ -1,8 +1,7 @@
-//Styled-components
+//Styles
 import styled from "styled-components";
 //Components
-import { ContactForm } from "./ContactForm";
-import { ContactInfo } from "./ContactInfo";
+import { ContactForm, ContactInfo } from "@components";
 
 const ContactSection = () => {
   return (

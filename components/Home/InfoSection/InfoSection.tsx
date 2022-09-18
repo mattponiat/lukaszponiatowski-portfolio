@@ -1,8 +1,7 @@
-//Styled-components
+//Styles
 import styled from "styled-components";
 //Components
-import { InfoContent } from "components/Home/InfoSection/InfoContent";
-import { InfoSocialMedia } from "components/Home/InfoSection/InfoSocialMedia";
+import { InfoContent, InfoSocialMedia } from "@components";
 //Types
 import { HomeInfoSectionProps } from "types";
 

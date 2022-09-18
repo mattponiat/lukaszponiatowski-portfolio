@@ -1,5 +1,4 @@
-import * as React from "react";
-//Styled-components
+//Styles
 import styled from "styled-components";
 //React-slideshow-image
 import { Slide } from "react-slideshow-image";

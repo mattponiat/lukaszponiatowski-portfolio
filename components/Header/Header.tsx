@@ -1,8 +1,8 @@
 import * as React from "react";
-//Styled-components
+//Styles
 import styled from "styled-components";
 //Components
-import { Navbar } from "./Navbar";
+import { Navbar } from "@components";
 //Hooks
 import { useWindowSize } from "usehooks-ts";
 //MUI

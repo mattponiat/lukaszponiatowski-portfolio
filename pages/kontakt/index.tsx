@@ -1,8 +1,7 @@
 import type { NextPageWithLayout } from "next";
 import Head from "next/head";
 //Components
-import { ContactPage, Layout } from "@components";
-import Facebook from "components/Facebook";
+import { ContactPage, Layout, Facebook } from "@components";
 //Types
 import { pageType } from "types";
 

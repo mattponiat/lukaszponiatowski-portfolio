@@ -1,7 +1,7 @@
-//Styled-components
+//Styles
 import styled from "styled-components";
 //Components
-import { SocialMediaIcon } from "./SocialMediaIcon";
+import { SocialMediaIcon } from "@components";
 //Icons
 import { FiInstagram } from "react-icons/fi";
 import { FaFacebook, FaLinkedinIn } from "react-icons/fa";

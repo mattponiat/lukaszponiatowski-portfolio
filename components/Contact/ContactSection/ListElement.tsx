@@ -1,4 +1,4 @@
-//Styled-components
+//Styles
 import styled from "styled-components";
 
 const ListElement = ({

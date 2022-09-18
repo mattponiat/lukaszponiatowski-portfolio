@@ -3,7 +3,7 @@ import Script from "next/script";
 import Head from "next/head";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
-//Styled-components
+//Styles
 import { ThemeProvider } from "styled-components";
 import theme from "theme/theme";
 import GlobalStyles from "theme/GlobalStyles";

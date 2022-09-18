@@ -1,7 +1,7 @@
-//Styled-components
+//Styles
 import styled from "styled-components";
 //Components
-import { DescContent } from "./DescContent";
+import { DescContent } from "@components";
 
 const DescSection = () => {
   return (

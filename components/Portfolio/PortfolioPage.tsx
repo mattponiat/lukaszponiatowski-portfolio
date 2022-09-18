@@ -1,4 +1,4 @@
-//Styled-components
+//Styles
 import styled from "styled-components";
 //Components
 import { InfoSection, ImgGallerySection } from "@components";

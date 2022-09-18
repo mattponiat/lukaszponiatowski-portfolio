@@ -1,14 +1,16 @@
 import * as React from "react";
-//Styled-components
+//Styles
 import styled from "styled-components";
-//Emotion
+import theme from "theme/theme";
 import { css } from "@emotion/react";
 //Components
-import { FieldName } from "./FieldName";
-import { FieldEmail } from "./FieldEmail";
-import { FieldTextArea } from "./FieldTextArea";
-import { FormResetButton } from "./FormResetButton";
-import { StyledIcon } from "./StyledIcon";
+import {
+  FieldName,
+  FieldEmail,
+  FieldTextArea,
+  FormResetButton,
+  StyledIcon,
+} from "@components";
 //Xstate
 import { createMachine } from "xstate";
 import { useMachine } from "@xstate/react";
@@ -20,8 +22,6 @@ import { Form, Formik } from "formik";
 import * as Yup from "yup";
 //Loaders
 import BarLoader from "react-spinners/BarLoader";
-//Theme
-import theme from "theme/theme";
 //Icons
 import { FiInstagram } from "react-icons/fi";
 import { FaFacebook, FaLinkedinIn } from "react-icons/fa";

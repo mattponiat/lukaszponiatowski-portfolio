@@ -1,4 +1,4 @@
-//Styled-components
+//Styles
 import styled from "styled-components";
 //Radix-ui
 import * as LabelPrimitive from "@radix-ui/react-label";

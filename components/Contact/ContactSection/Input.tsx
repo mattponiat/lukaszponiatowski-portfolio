@@ -1,11 +1,5 @@
-import * as React from "react";
-//Styled-components
+//Styles
 import styled from "styled-components";
-
-// const ForwardRefInput = React.forwardRef((props, ref) => (
-//   <input ref={ref} {...props} autoComplete="on" />
-// ));
-// ForwardRefInput.displayName = "ForwardRefInput";
 
 const Input = ({ ...props }) => {
   return (

@@ -1,5 +1,5 @@
 import Link from "next/link";
-//Styled-components
+//Styles
 import styled from "styled-components";
 
 const StyledLink = ({

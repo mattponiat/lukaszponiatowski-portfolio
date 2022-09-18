@@ -1,9 +1,8 @@
 import Image from "next/image";
-//Styled-components
+//Styles
 import styled from "styled-components";
 //SRL
 import { SRLWrapper } from "simple-react-lightbox";
-//asd
 
 const ImgGallery = () => {
   const images = [

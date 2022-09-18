@@ -1,7 +1,7 @@
-//Styled-components
+//Styles
 import styled from "styled-components";
 //Components
-import { ListElement } from "./ListElement";
+import { ListElement } from "@components";
 //Icons
 import { IoMdMail } from "react-icons/io";
 import { AiFillPhone } from "react-icons/ai";

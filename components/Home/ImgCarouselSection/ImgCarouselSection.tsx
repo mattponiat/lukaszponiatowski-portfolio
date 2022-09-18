@@ -1,7 +1,7 @@
-//Styled-components
+//Styles
 import styled from "styled-components";
 //Components
-import { ImgCarousel } from "./ImgCarousel";
+import { ImgCarousel } from "@components";
 
 const ImgCarouselSection = () => {
   return (
