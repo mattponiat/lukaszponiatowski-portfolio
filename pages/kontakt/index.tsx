@@ -2,6 +2,7 @@ import type { NextPageWithLayout } from "next";
 import Head from "next/head";
 //Components
 import { ContactPage, Layout } from "@components";
+import Facebook from "components/Facebook";
 //Types
 import { pageType } from "types";
 
@@ -25,6 +26,7 @@ const Contact: NextPageWithLayout = () => {
         <meta property="og:image:alt" content="Banner image" />
       </Head>
       <ContactPage />
+      <Facebook />
     </>
   );
 };
