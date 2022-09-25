@@ -8,7 +8,7 @@ const Facebook = () => {
       <Script strategy="lazyOnload" id="messenger">
         {`
             var chatbox = document.getElementById('fb-customer-chat');
-            chatbox.setAttribute("page_id", "105409568850494");
+            chatbox.setAttribute("page_id", ${process.env.NEXT_PUBLIC_FB_PAGE_ID});
             chatbox.setAttribute("attribution", "biz_inbox");
       
             window.fbAsyncInit = function() {
