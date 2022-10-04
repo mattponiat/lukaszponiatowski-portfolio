@@ -132,17 +132,17 @@ const ContactForm = () => {
             <StyledIcon
               icon={<FiInstagram />}
               href="https://www.instagram.com/lukaszponiatowski.pl/"
-              title="Instagram link"
+              title="Instagram icon"
             />
             <StyledIcon
               icon={<FaFacebook />}
               href="https://www.facebook.com/%C5%81ukasz-Poniatowski-Fotografia-105409568850494"
-              title="Facebook link"
+              title="Facebook icon"
             />
             <StyledIcon
               icon={<FaLinkedinIn />}
               href="https://www.linkedin.com/in/%C5%82ukasz-poniatowski-6a5bb4238/"
-              title="LinkedIn link"
+              title="LinkedIn icon"
             />
           </IconWrapper>
           {state.value === "Loading" ? (
