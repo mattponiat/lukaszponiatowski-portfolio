@@ -1,6 +1,6 @@
 # Portfolio website for a photographer
 
-Website made for my brother to advertise his work.
+Website made for a private photographer from my city to advertise his work.
 
 ## Built with:
 
