@@ -34,6 +34,9 @@ const ImgCarousel = () => {
     {
       url: "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgCarousel6.webp",
     },
+    {
+      url: "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/ImgCarousel7.webp",
+    },
   ];
 
   return (
