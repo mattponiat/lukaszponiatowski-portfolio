@@ -5,20 +5,10 @@ import { InfoContent, InfoSocialMedia } from "@components";
 //Types
 import { HomeInfoSectionProps } from "types";
 
-const InfoSection = ({
-  titleSize,
-  title,
-  quote,
-  about,
-}: HomeInfoSectionProps) => {
+const InfoSection = ({ titleSize, title, about }: HomeInfoSectionProps) => {
   return (
     <Wrapper>
-      <InfoContent
-        titleSize={titleSize}
-        title={title}
-        quote={quote}
-        about={about}
-      />
+      <InfoContent titleSize={titleSize} title={title} about={about} />
       <InfoSocialMedia />
     </Wrapper>
   );
@@ -29,14 +19,9 @@ const Wrapper = styled.section`
   align-items: center;
   justify-content: center;
   max-width: 100%;
-  min-height: 562px;
+  min-height: 450px;
   padding: 30px;
   background-color: ${({ theme }) => theme.colors.secondaryBg};
-  background-image: url("https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/HomeBackgroundImg.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: color-dodge;
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;

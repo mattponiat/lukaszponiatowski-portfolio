@@ -22,8 +22,8 @@ const Wrapper = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 170px;
-  max-height: 170px;
+  min-height: 150px;
+  max-height: 150px;
   max-width: 100%;
   padding: 0 30px;
   background-color: ${({ theme }) => theme.colors.secondaryBg};

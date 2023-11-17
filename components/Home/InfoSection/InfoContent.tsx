@@ -3,21 +3,11 @@ import styled from "styled-components";
 //Types
 import { HomeInfoSectionProps } from "types";
 
-const InfoContent = ({
-  titleSize,
-  title,
-  quote,
-  about,
-}: HomeInfoSectionProps) => {
+const InfoContent = ({ titleSize, title, about }: HomeInfoSectionProps) => {
   return (
     <Wrapper>
       <StyledHeading titleSize={titleSize}>{title}</StyledHeading>
       <TextWrapper>
-        {quote ? (
-          <StyledQuote>
-            <i>{quote}</i>
-          </StyledQuote>
-        ) : null}
         <StyledAbout>{about}</StyledAbout>
       </TextWrapper>
     </Wrapper>
@@ -40,7 +30,7 @@ const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   color: ${({ theme }) => theme.colors.text.homeText};
-  font-size: ${({ theme }) => theme.font.size.semiMedium};
+  font-size: ${({ theme }) => theme.font.size.medium};
   line-height: 25.2px;
 `;
 
@@ -66,16 +56,6 @@ const StyledAbout = styled.p`
     max-width: fit-content;
     text-align: center;
     font-size: ${({ theme }) => theme.font.size.semiMedium};
-  }
-`;
-
-const StyledQuote = styled.p`
-  font-weight: 600;
-
-  @media screen and (max-width: 1024px) {
-    text-align: center;
-    font-size: ${({ theme }) => theme.font.size.semiMedium};
-    color: ${({ theme }) => theme.colors.lightGrey};
   }
 `;
 

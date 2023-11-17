@@ -7,7 +7,7 @@ const PortfolioPage = () => {
   return (
     <Wrapper>
       <InfoSection
-        titleSize={80}
+        titleSize={65}
         title="PORTFOLIO"
         about="Podczas reportażu działam dyskretnie, niepostrzeżenie utrwalę wydarzenia nawet z samego środka akcji. Poluje na decydujące momenty, szczegóły pomijane oraz często niedoceniane, które w dużej mierze wpływają na finalny odbiór okoliczności. Tworząc dla was album, zależy mi na wszechstronnym oddaniu zastanego klimatu, na przedstawieniu waszych historii emocjami."
       />

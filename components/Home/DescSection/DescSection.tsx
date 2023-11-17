@@ -18,13 +18,11 @@ const DescSection = () => {
         <StyledText>
           Wiem, jak dużym jest to wyzwaniem oraz z jaką wiąże się
           odpowiedzialnością. Dlatego jako fotograf jestem ogromnie wdzięczny za
-          zaufanie jakim darzą mnie moi klienci. Zajmując się tym profesjonalnie
-          moim obowiązkiem jest zapewnienie pierwszorzędnych efektów. Oferuję
-          jutrzejsze spojrzenie na fotografię wraz z kreatywnym wykorzystaniem
-          roli post produkcji. Nie podążam utartymi szlakami i zależy mi na
-          przygotowaniu dla Państwa unikatowych historii. Serdecznie zapraszam
-          do kontaktu, gdzie przedstawię szczegóły oferty i odpowiem na każde
-          pytanie.
+          zaufanie jakim darzą mnie moi klienci. Oferuję jutrzejsze spojrzenie
+          na fotografię wraz z kreatywnym wykorzystaniem roli post produkcji.
+          Nie podążam utartymi szlakami i zależy mi na przygotowaniu dla Państwa
+          unikatowych historii. Serdecznie zapraszam do kontaktu, gdzie
+          przedstawię szczegóły oferty i odpowiem na każde pytanie.
         </StyledText>
       </DescContent>
     </Wrapper>
@@ -54,7 +52,7 @@ const DescContent = styled.div`
 
 const StyledText = styled.p`
   color: ${({ theme }) => theme.colors.text.homeText};
-  font-size: 16px;
+  font-size: ${({ theme }) => theme.font.size.medium};
   font-weight: 600;
   text-align: justify;
   line-height: 25.2px;

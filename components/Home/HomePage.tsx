@@ -9,7 +9,6 @@ const HomePage = () => {
       <InfoSection
         titleSize={52}
         title="ŁUKASZ PONIATOWSKI"
-        quote="“Fotograf z wrażliwym podejściem do barw, oprawi Wasze emocje w niebanalną kompozycję.”"
         about="Witaj, bardzo się cieszę, że tutaj jesteś. Korzystając z okazji pragnę zaprosić Cię do zapoznania się z moją osobą, a także portfolio stworzonym specjalnie z myślą o Tobie. Wykonuje fotoreportaże z uroczystości okolicznościowych, jednak to nie wszystko, co posiadam w swojej ofercie."
       />
       <ImgCarouselSection />
