@@ -1,8 +1,7 @@
 import * as React from "react";
-//Styles
-import styled from "styled-components";
 //Components
 import { Navbar } from "@components";
+import Link from "next/link";
 //Hooks
 import { useWindowSize } from "usehooks-ts";
 //MUI
@@ -38,21 +37,21 @@ const Header = () => {
   });
 
   return (
-    <EmptyWrapper>
+    <header className="max-w-full min-h-[70px] bg-mainBg shadow-[0px_2px_4px_rgba(0,0,0,0.1)]">
       {isLoading === false && (
-        <Wrapper>
+        <div className="flex sticky items-center justify-end md:justify-center max-w-full min-h-[70px] bg-mainbg shadow-[0px_2px_4px_rgba(0,0,0,0.1)]">
           {width <= 768 ? (
             <>
-              <StyledButton onClick={handleOpen}>
-                <StyledHamburgerIcon />
-              </StyledButton>
+              <button onClick={handleOpen} className="px-2">
+                <HamburgerIcon />
+              </button>
               <Dialog
                 fullScreen
                 open={open}
                 onClose={handleClose}
                 TransitionComponent={Transition}
               >
-                <StyledDialogContent>
+                <div className="flex flex-col justify-start max-w-full min-h-full px-2.5 bg-secondaryBg opacity-[0.99]">
                   <IconButton
                     size="medium"
                     onClick={handleClose}
@@ -62,32 +61,32 @@ const Header = () => {
                       margin: "10px 0",
                     }}
                   >
-                    <StyledCloseIcon />
+                    <CloseIcon />
                   </IconButton>
-                  <StyledNavWrapper>
-                    <StyledLink onClick={handleClose} href="/">
+                  <nav className="flex flex-col justify-center items-center mt-auto mx-0 mb-[290px]">
+                    <HeaderLink handleClose={handleClose} href="/">
                       HOME
-                    </StyledLink>
-                    <StyledLink onClick={handleClose} href="/portfolio">
+                    </HeaderLink>
+                    <HeaderLink handleClose={handleClose} href="/portfolio">
                       PORTFOLIO
-                    </StyledLink>
-                    <StyledLink onClick={handleClose} href="/kontakt">
+                    </HeaderLink>
+                    <HeaderLink handleClose={handleClose} href="/kontakt">
                       KONTAKT
-                    </StyledLink>
-                  </StyledNavWrapper>
-                </StyledDialogContent>
+                    </HeaderLink>
+                  </nav>
+                </div>
               </Dialog>
             </>
           ) : (
             <Navbar />
           )}
-        </Wrapper>
+        </div>
       )}
-    </EmptyWrapper>
+    </header>
   );
 };
 
-const StyledHamburgerIcon = () => {
+const HamburgerIcon = () => {
   return (
     <svg viewBox="0 0 10 8" width="37">
       <path
@@ -100,37 +99,7 @@ const StyledHamburgerIcon = () => {
   );
 };
 
-const Wrapper = styled.div`
-  display: flex;
-  position: sticky;
-  justify-content: center;
-  align-items: center;
-  max-width: 100%;
-  min-height: 70px;
-  background-color: ${({ theme }) => theme.colors.mainBg};
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-
-  @media screen and (max-width: 768px) {
-    justify-content: end;
-  }
-`;
-
-const EmptyWrapper = styled.header`
-  max-width: 100%;
-  min-height: 70px;
-  background-color: ${({ theme }) => theme.colors.mainBg};
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-`;
-
-const StyledButton = styled.button`
-  display: grid;
-  place-items: center;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-`;
-
-const StyledCloseIcon = () => {
+const CloseIcon = () => {
   return (
     <svg
       width="29"
@@ -150,36 +119,26 @@ const StyledCloseIcon = () => {
   );
 };
 
-const StyledDialogContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  max-width: 100%;
-  min-height: 100%;
-  padding: 0 10px;
-  background-color: ${({ theme }) => theme.colors.secondaryBg};
-  opacity: 0.99;
-`;
-
-const StyledNavWrapper = styled.nav`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: auto 0 290px 0;
-`;
-
-const StyledLink = styled.a`
-  margin: 15px 0;
-  font-size: ${({ theme }) => theme.font.size.xlarge};
-  color: ${({ theme }) => theme.colors.mainBg};
-  letter-spacing: 1px;
-  text-decoration: none;
-  transition: color 0.3s;
-
-  :hover {
-    color: ${({ theme }) => theme.colors.lightGrey};
-  }
-`;
+const HeaderLink = ({
+  href,
+  children,
+  handleClose,
+}: {
+  href: string;
+  children: React.ReactNode;
+  handleClose: () => void;
+}) => {
+  return (
+    <Link href={href} passHref>
+      <a
+        href={href}
+        onClick={handleClose}
+        className="my-[15px] mx-0 text-xlarge text-mainBg transition-colors hover:text-lightGrey"
+      >
+        {children}
+      </a>
+    </Link>
+  );
+};
 
 export { Header };

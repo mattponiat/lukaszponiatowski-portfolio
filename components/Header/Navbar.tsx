@@ -1,25 +1,33 @@
-//Styles
-import styled from "styled-components";
 //Components
-import { StyledLink } from "@components";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <Wrapper>
+    <nav className="flex justify-around items-center max-w-[555px] w-full">
       <StyledLink href="/home">HOME</StyledLink>
       <StyledLink href="/portfolio">PORTFOLIO</StyledLink>
       <StyledLink href="/kontakt">KONTAKT</StyledLink>
-    </Wrapper>
+    </nav>
   );
 };
 
-const Wrapper = styled.nav`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  max-width: 555px;
-  width: 100%;
-  min-height: inherit;
-`;
+const StyledLink = ({
+  children,
+  href,
+}: {
+  children: React.ReactNode;
+  href: string;
+}) => {
+  return (
+    <Link href={href} passHref>
+      <a
+        className="py-6 text-header font-extrabold text-semiMedium transition-colors hover:text-headerHover"
+        href={href}
+      >
+        {children}
+      </a>
+    </Link>
+  );
+};
 
 export { Navbar };
