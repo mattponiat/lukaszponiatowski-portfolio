@@ -1,70 +1,25 @@
+//Components
 import Link from "next/link";
-//Styles
-import styled from "styled-components";
 
 const Footer = () => {
   return (
-    <Wrapper>
-      <StyledDivider />
-      <StyledSpan>
+    <footer className="relative flex flex-col items-center justify-center min-h-[150px] max-h-[150px] max-w-full py-0 px-[30px] bg-secondaryBg text-homeHeading">
+      <div className="absolute w-full max-w-[450px] border-t border-t-lightGrey border-b border-b-mainBg sm small:max-w-[600px] smaller:max-w-[300px] smallest:max-w-[220px]" />
+      <span className="text-xsmall text-[#787f85] mt-auto mb-8">
         Created by{" "}
         <Link href="https://www.mattponiat.com.pl/" passHref>
-          <StyledA target="_blank">Mateusz Poniatowski</StyledA>
+          <a
+            href="https://www.mattponiat.com.pl/"
+            target="_blank"
+            rel="noreferrer"
+            className="text-[#3694ff] transition-colors hover:text-[#3694ffa2]"
+          >
+            Mateusz Poniatowski
+          </a>
         </Link>
-      </StyledSpan>
-    </Wrapper>
+      </span>
+    </footer>
   );
 };
-
-const Wrapper = styled.footer`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 150px;
-  max-height: 150px;
-  max-width: 100%;
-  padding: 0 30px;
-  background-color: ${({ theme }) => theme.colors.secondaryBg};
-  color: ${({ theme }) => theme.colors.text.homeHeading};
-`;
-
-const StyledDivider = styled.div`
-  position: absolute;
-  width: 100%;
-  max-width: 600px;
-  border-top: 0.5px groove ${({ theme }) => theme.colors.lightGrey};
-  border-bottom: 0.5px groove ${({ theme }) => theme.colors.mainBg};
-
-  @media screen and (max-width: 630px) {
-    max-width: 450px;
-  }
-
-  @media screen and (max-width: 486px) {
-    max-width: 300px;
-  }
-
-  @media screen and (max-width: 330px) {
-    max-width: 220px;
-  }
-`;
-
-const StyledSpan = styled.span`
-  font-size: ${({ theme }) => theme.font.size.xsmall};
-  color: #787f85;
-  margin: auto 0 32px;
-  letter-spacing: 0.4px;
-`;
-
-const StyledA = styled.a`
-  color: #3694ff;
-  text-decoration: none;
-  transition: 0.2s color;
-
-  :hover {
-    color: #3694ffa2;
-  }
-`;
 
 export { Footer };

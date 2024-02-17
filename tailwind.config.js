@@ -35,6 +35,11 @@ module.exports = {
         xxlarge: "32px",
         xxxlarge: "52px",
       },
+      screens: {
+        smallest: "330px",
+        smaller: "486px",
+        small: "630px",
+      },
     },
   },
   plugins: [],
