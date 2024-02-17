@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { ThemeProvider } from "styled-components";
 import theme from "theme/theme";
 import GlobalStyles from "theme/GlobalStyles";
+import "../styles/globals.css";
 //Google Analytics
 import * as gtag from "lib/gtag";
 
