@@ -42,6 +42,10 @@ module.exports = {
         contactSmall: "470px",
         contactMedium: "1024px",
       },
+      gridTemplateColumns: {
+        portfolioGrid:
+          "repeat(auto-fill,minmax(min(100%/3, max(300px, 100%/8)), 1fr))",
+      },
     },
   },
   plugins: [],
