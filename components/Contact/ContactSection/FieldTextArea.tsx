@@ -11,7 +11,7 @@ const FieldTextArea = ({ touched, errors, visibility }: ContactFieldProps) => {
   return (
     <div
       className={clsx(
-        "flex flex-col items-start max-w-full mb-[15px]",
+        "flex flex-col items-start max-w-full mb-[5px]",
         visibility === "hidden" ? "invisible" : "visible"
       )}
     >
