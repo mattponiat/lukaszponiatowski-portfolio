@@ -42,9 +42,16 @@ const Header = () => {
         <div className="flex sticky items-center justify-end md:justify-center max-w-full min-h-[70px] bg-mainbg shadow-[0px_2px_4px_rgba(0,0,0,0.1)]">
           {width <= 768 ? (
             <>
-              <button onClick={handleOpen} className="px-2">
-                <HamburgerIcon />
-              </button>
+              <div className="flex items-center justify-between w-full">
+                <Link href="/home" passHref>
+                  <span className="p-4 cursor-pointer text-header font-extrabold text-large transition-colors hover:text-headerHover">
+                    lukaszponiatowski.pl
+                  </span>
+                </Link>
+                <button onClick={handleOpen} className="px-2">
+                  <HamburgerIcon />
+                </button>
+              </div>
               <Dialog
                 fullScreen
                 open={open}
@@ -65,7 +72,7 @@ const Header = () => {
                   </IconButton>
                   <nav className="flex flex-col justify-center items-center mt-auto mx-0 mb-[290px]">
                     <HeaderLink handleClose={handleClose} href="/">
-                      HOME
+                      O MNIE
                     </HeaderLink>
                     <HeaderLink handleClose={handleClose} href="/portfolio">
                       PORTFOLIO
@@ -78,7 +85,14 @@ const Header = () => {
               </Dialog>
             </>
           ) : (
-            <Navbar />
+            <div className="flex w-full justify-between items-center pl-6">
+              <Link href="/home" passHref>
+                <span className="py-4 cursor-pointer text-header font-extrabold text-xlarge transition-colors hover:text-headerHover">
+                  lukaszponiatowski.pl
+                </span>
+              </Link>
+              <Navbar />
+            </div>
           )}
         </div>
       )}

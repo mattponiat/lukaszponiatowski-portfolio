@@ -4,14 +4,14 @@ import Link from "next/link";
 const Navbar = () => {
   return (
     <nav className="flex justify-around items-center max-w-[555px] w-full">
-      <StyledLink href="/home">HOME</StyledLink>
-      <StyledLink href="/portfolio">PORTFOLIO</StyledLink>
-      <StyledLink href="/kontakt">KONTAKT</StyledLink>
+      <NavbarLink href="/o_mnie">O MNIE</NavbarLink>
+      <NavbarLink href="/portfolio">PORTFOLIO</NavbarLink>
+      <NavbarLink href="/kontakt">KONTAKT</NavbarLink>
     </nav>
   );
 };
 
-const StyledLink = ({
+const NavbarLink = ({
   children,
   href,
 }: {
@@ -21,7 +21,7 @@ const StyledLink = ({
   return (
     <Link href={href} passHref>
       <a
-        className="py-6 text-header font-extrabold text-semiMedium transition-colors hover:text-headerHover"
+        className="py-4 text-header font-bold text-medium transition-colors hover:text-headerHover"
         href={href}
       >
         {children}
