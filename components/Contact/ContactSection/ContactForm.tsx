@@ -92,11 +92,12 @@ const ContactForm = () => {
 
   const resetForm = () => send("RESET");
 
+  console.log(process.env.NEXT_PUBLIC_CONTACT_FORM_API);
   const handleOnSubmit = async (values: FormValues) => {
     try {
       send("SEND");
       const response = await fetch(
-        "https://qd553leofc.execute-api.eu-west-3.amazonaws.com/default/sendEmailFromContactForm",
+        String(process.env.NEXT_PUBLIC_CONTACT_FORM_API),
         {
           method: "POST",
           body: JSON.stringify(values),
@@ -146,7 +147,7 @@ const ContactForm = () => {
           />
           <div
             className={clsx(
-              "absolute top-[427px] place-self-end flex justify-center items-center gap-[5px]",
+              "absolute top-[440px] place-self-end flex justify-center items-center gap-[5px]",
               visibility === "hidden" ? "invisible" : "visible"
             )}
           >

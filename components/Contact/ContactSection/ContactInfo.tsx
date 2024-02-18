@@ -6,7 +6,7 @@ const ContactInfo = () => {
   return (
     <div className="flex flex-col self-center max-w-[600px] w-full px-2.5 contactMedium:self-start">
       <h1 className="m-0 text-secondaryBg text-xxxlarge font-extrabold hidden contactMedium:inline">
-        NAPISZ DO MNIE
+        SKONTAKTUJ SIĘ
       </h1>
       <p className="m-0 mb-[25px] text-secondaryBg text-large text-justify contactMedium:text-left contactMedium:text-xlarge contactMedium:mb-5">
         Jeśli podobają się Państwu moje zdjęcia, zapytajcie proszę o termin,
@@ -15,7 +15,7 @@ const ContactInfo = () => {
         Na wszystkie maile staram się odpowiedzieć jak najszybciej.
       </p>
       <ListElement icon={<AiFillPhone />} text="+48 724 241 144" />
-      <ListElement icon={<IoMdMail />} text="kontakt@lukaszponiatowski.pl" />
+      <ListElement icon={<IoMdMail />} text="lukaszponiatowskipl@gmail.com" />
     </div>
   );
 };
