@@ -1,21 +1,16 @@
 import * as React from "react";
 //Styles
-import styled from "styled-components";
 import theme from "theme/theme";
 import { css } from "@emotion/react";
+import clsx from "clsx";
 //Components
-import {
-  FieldName,
-  FieldEmail,
-  FieldTextArea,
-  FormResetButton,
-  StyledIcon,
-} from "@components";
+import { FieldName, FieldEmail, FieldTextArea } from "@components";
+import Link from "next/link";
 //Xstate
 import { createMachine } from "xstate";
 import { useMachine } from "@xstate/react";
 //Types
-import { FormValues } from "types";
+import type { FormValues } from "types";
 //Formik
 import { Form, Formik } from "formik";
 //Yup
@@ -25,6 +20,22 @@ import BarLoader from "react-spinners/BarLoader";
 //Icons
 import { FiInstagram } from "react-icons/fi";
 import { FaFacebook, FaLinkedinIn } from "react-icons/fa";
+
+const validationSchema = Yup.object().shape({
+  name: Yup.string()
+    .required("Imię i nazwisko jest wymagane")
+    .min(3, "Wymagane są minimum 3 znaki")
+    .max(40, "Może być maksymalnie 40 znaków"),
+  email: Yup.string()
+    .required("Email jest wymagany")
+    .email("Niepoprawny email")
+    .min(3, "Wymagane są minimum 3 znaki")
+    .max(40, "Może być maksymalnie 40 znaków"),
+  message: Yup.string()
+    .required("Wiadomość jest wymagana")
+    .min(10, "Wymagane jest minimum 10 znaków")
+    .max(4000, "Może być maksymalnie 4000 znaków"),
+});
 
 const formMachine = createMachine({
   id: "FormMachine",
@@ -63,6 +74,11 @@ const formMachine = createMachine({
     },
   },
 });
+
+const override = css`
+  display: block;
+  margin: 23px auto;
+`;
 
 type StateType = "Default" | "Loading" | "Error" | "Success";
 
@@ -112,7 +128,7 @@ const ContactForm = () => {
       validationSchema={validationSchema}
     >
       {({ touched, errors, setFieldValue }) => (
-        <StyledForm>
+        <Form className="relative flex flex-col max-w-[600px] w-full">
           <FieldName
             touched={touched}
             errors={errors}
@@ -128,7 +144,12 @@ const ContactForm = () => {
             errors={errors}
             visibility={visibility}
           />
-          <IconWrapper visibility={visibility}>
+          <div
+            className={clsx(
+              "absolute top-[427px] place-self-end flex justify-center items-center gap-[5px]",
+              visibility === "hidden" ? "invisible" : "visible"
+            )}
+          >
             <StyledIcon
               icon={<FiInstagram />}
               href="https://www.instagram.com/lukaszponiatowski.pl/"
@@ -144,7 +165,7 @@ const ContactForm = () => {
               href="https://www.linkedin.com/in/%C5%82ukasz-poniatowski-6a5bb4238/"
               title="LinkedIn icon"
             />
-          </IconWrapper>
+          </div>
           {state.value === "Loading" ? (
             <BarLoader
               css={override}
@@ -152,14 +173,24 @@ const ContactForm = () => {
               loading={true}
             />
           ) : (
-            <StyledSubmit visibility={visibility} type="submit">
+            <button
+              type="submit"
+              className={clsx(
+                "self-start p-[15px] bg-mainBg border-2 border-solid border-secondaryBg rounded-sm text-secondaryBg text-xxsmall font-extrabold transition-colors tracking-[2px]",
+                "hover:bg-secondaryBg hover:text-mainBg",
+                "focus:bg-secondaryBg focus:text-mainBg",
+                visibility === "hidden" ? "invisible" : "visible"
+              )}
+            >
               WYŚLIJ
-            </StyledSubmit>
+            </button>
           )}
           {state.value === "Success" && (
-            <AfterSubmitWrapper>
-              <StyledText>Wiadomość została wysłana!</StyledText>
-              <FormResetButton
+            <div className="absolute flex flex-col gap-4 items-center place-self-center top-[30%]">
+              <p className="w-full text-secondaryBg text-large font-bold">
+                Wiadomość została wysłana!
+              </p>
+              <button
                 onClick={() => {
                   resetForm();
                   setFieldValue("name", "", false);
@@ -167,102 +198,62 @@ const ContactForm = () => {
                   setFieldValue("message", "", false);
                 }}
                 ref={buttonRef}
+                className={clsx(
+                  "place-self-center p-[15px] bg-mainBg border-2 border-solid border-secondaryBg rounded-sm text-secondaryBg text-xxsmall font-bold transition-colors",
+                  "hover:bg-secondaryBg hover:text-mainBg",
+                  "focus:bg-secondaryBg focus:text-mainBg"
+                )}
               >
                 Wyślij ponownie
-              </FormResetButton>
-            </AfterSubmitWrapper>
+              </button>
+            </div>
           )}
           {state.value === "Error" && (
-            <AfterSubmitWrapper>
-              <StyledText>Ups, coś poszło nie tak!</StyledText>
-              <FormResetButton onClick={resetForm} ref={buttonRef}>
+            <div className="absolute flex flex-col gap-4 items-center place-self-center top-[30%]">
+              <p className="w-full text-secondaryBg text-large font-bold">
+                Ups, coś poszło nie tak!
+              </p>
+              <button
+                onClick={resetForm}
+                ref={buttonRef}
+                className={clsx(
+                  "place-self-center p-[15px] bg-mainBg border-2 border-solid border-secondaryBg rounded-sm text-secondaryBg text-xxsmall font-bold transition-colors",
+                  "hover:bg-secondaryBg hover:text-mainBg",
+                  "focus:bg-secondaryBg focus:text-mainBg"
+                )}
+              >
                 Wyślij ponownie
-              </FormResetButton>
-            </AfterSubmitWrapper>
+              </button>
+            </div>
           )}
-        </StyledForm>
+        </Form>
       )}
     </Formik>
   );
 };
 
-const validationSchema = Yup.object().shape({
-  name: Yup.string()
-    .required("Imię i nazwisko jest wymagane")
-    .min(3, "Wymagane są minimum 3 znaki")
-    .max(40, "Może być maksymalnie 40 znaków"),
-  email: Yup.string()
-    .required("Email jest wymagany")
-    .email("Niepoprawny email")
-    .min(3, "Wymagane są minimum 3 znaki")
-    .max(40, "Może być maksymalnie 40 znaków"),
-  message: Yup.string()
-    .required("Wiadomość jest wymagana")
-    .min(10, "Wymagane jest minimum 10 znaków")
-    .max(4000, "Może być maksymalnie 4000 znaków"),
-});
-
-const StyledForm = styled(Form)`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  max-width: 600px;
-  width: 100%;
-`;
-
-const StyledSubmit = styled.button<{ visibility: string }>`
-  align-self: start;
-  padding: 15px;
-  background-color: ${({ theme }) => theme.colors.mainBg};
-  border: 2px solid ${({ theme }) => theme.colors.secondaryBg};
-  border-radius: 2px;
-  color: ${({ theme }) => theme.colors.secondaryBg};
-  font-size: ${({ theme }) => theme.font.size.xxsmall};
-  font-weight: 800;
-  letter-spacing: 2px;
-  cursor: pointer;
-  visibility: ${(props) => props.visibility};
-  transition: background-color 0.3s, color 0.3s;
-
-  :hover,
-  :focus-visible {
-    background-color: ${({ theme }) => theme.colors.secondaryBg};
-    color: ${({ theme }) => theme.colors.mainBg};
-  }
-`;
-
-const override = css`
-  display: block;
-  margin: 23px auto;
-`;
-
-const AfterSubmitWrapper = styled.div`
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  place-self: center;
-  top: 30%;
-`;
-
-const StyledText = styled.p`
-  width: 100%;
-  color: ${({ theme }) => theme.colors.secondaryBg};
-  font-size: ${({ theme }) => theme.font.size.large};
-  font-weight: 700;
-  letter-spacing: 2px;
-`;
-
-const IconWrapper = styled.div<{ visibility: string }>`
-  position: absolute;
-  top: 427px;
-  place-self: end;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  visibility: ${(props) => props.visibility};
-`;
+const StyledIcon = ({
+  icon,
+  href,
+  title,
+}: {
+  icon: React.ReactElement;
+  href: string;
+  title: string;
+}) => {
+  return (
+    <Link href={href} passHref>
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        title={title}
+        className="flex items-center justify-center w-[30px] h-[30px] rounded-full bg-transparent text-secondaryBg text-xlarge transition-colors hover:text-darkGrey"
+      >
+        {icon}
+      </a>
+    </Link>
+  );
+};
 
 export { ContactForm };

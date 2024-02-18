@@ -1,5 +1,5 @@
 //Styles
-import styled from "styled-components";
+import clsx from "clsx";
 //Components
 import { FormLabel } from "@components";
 //Formik
@@ -9,48 +9,38 @@ import { ContactFieldProps } from "types";
 
 const FieldTextArea = ({ touched, errors, visibility }: ContactFieldProps) => {
   return (
-    <Wrapper visibility={visibility}>
+    <div
+      className={clsx(
+        "flex flex-col items-start max-w-full mb-[15px]",
+        visibility === "hidden" ? "invisible" : "visible"
+      )}
+    >
       <FormLabel htmlFor="message">Wiadomość</FormLabel>
-      <Field type="text" name="message" id="message" as={StyledTextArea} />
-      <StyledSpan>{(touched.message && errors.message) ?? ""}</StyledSpan>
-    </Wrapper>
+      <Field
+        type="text"
+        name="message"
+        id="message"
+        component={TextArea}
+        as={TextArea}
+      />
+      <span className="h-5 text-mainRed text-xsmall select-none">
+        {(touched.message && errors.message) ?? ""}
+      </span>
+    </div>
   );
 };
 
-const Wrapper = styled.div<{ visibility: string }>`
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  max-width: 100%;
-  visibility: ${(props) => props.visibility};
-`;
-
-const StyledTextArea = styled.textarea`
-  width: 100%;
-  min-height: 150px;
-  padding: 10px;
-  margin-bottom: 5px;
-  background-color: ${({ theme }) => theme.colors.mainBg};
-  border: 2px solid ${({ theme }) => theme.colors.secondaryBg};
-  color: ${({ theme }) => theme.colors.secondaryBg};
-  font-size: ${({ theme }) => theme.font.size.medium};
-  font-weight: 700;
-  resize: none;
-  transition: box-shadow 0.3s;
-
-  :focus-visible,
-  :focus {
-    outline: none;
-    box-shadow: rgb(44, 62, 80) 0px 0px 4px 0px inset;
-  }
-`;
-
-const StyledSpan = styled.span`
-  height: 20px;
-  color: ${({ theme }) => theme.colors.mainRed};
-  font-size: ${({ theme }) => theme.font.size.xsmall};
-  letter-spacing: 0.4px;
-  user-select: none;
-`;
+const TextArea = ({ field }: { field: any }) => {
+  return (
+    <textarea
+      {...field}
+      className={clsx(
+        "w-full min-h-[150px] p-2.5 mb-[5px] bg-mainBg border-2 border-solid border-secondaryBg text-secondaryBg text-medium font-bold resize-none transition-shadow",
+        "focus-visible:outline-none focus-visible:shadow-[0px_0px_4px_0px_rgb(44,62,80)_inset]",
+        "focus:outline-none focus:shadow-[0px_0px_4px_0px_rgb(44,62,80)_inset]"
+      )}
+    />
+  );
+};
 
 export { FieldTextArea };

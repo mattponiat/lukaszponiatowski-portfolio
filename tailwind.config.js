@@ -39,6 +39,8 @@ module.exports = {
         smallest: "330px",
         smaller: "486px",
         small: "630px",
+        contactSmall: "470px",
+        contactMedium: "1024px",
       },
     },
   },

@@ -1,29 +1,31 @@
 //Styles
-import styled from "styled-components";
+import clsx from "clsx";
 //Components
-import { ContactSection } from "@components";
+import { ContactForm, ContactInfo } from "@components";
 //Hooks
 import { useWindowSize } from "usehooks-ts";
 
 const ContactPage = () => {
   const { height } = useWindowSize();
+
   return (
-    <Wrapper height={height}>
-      <ContactSection />
-    </Wrapper>
+    <main
+      className={clsx(
+        `flex items-center justify-center max-w-full min-h-screen lg:min-h-[${height}px]`
+      )}
+    >
+      <section
+        className={clsx(
+          "flex items-center justify-center gap-[50px] flex-col-reverse w-full p-5 bg-mainBg",
+          "contactSmall:py-[50px] contactSmall:px-5",
+          "contactMedium:gap-5 contactMedium:flex-row"
+        )}
+      >
+        <ContactInfo />
+        <ContactForm />
+      </section>
+    </main>
   );
 };
-
-const Wrapper = styled.main<{ height: number }>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: ${({ height }) => height}px;
-  max-width: 100%;
-
-  @media screen and (max-width: 1024px) {
-    min-height: 100vh;
-  }
-`;
 
 export { ContactPage };

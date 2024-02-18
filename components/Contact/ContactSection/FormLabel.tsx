@@ -1,6 +1,4 @@
-//Styles
-import styled from "styled-components";
-//Radix-ui
+//Components
 import * as LabelPrimitive from "@radix-ui/react-label";
 
 const FormLabel = ({
@@ -11,19 +9,14 @@ const FormLabel = ({
   htmlFor?: string;
 }) => {
   return (
-    <StyledLabel role="none" htmlFor={htmlFor}>
+    <LabelPrimitive.Root
+      role="none"
+      htmlFor={htmlFor}
+      className="text-semiMedium font-extrabold text-secondaryBg select-none mb-[2px]"
+    >
       {children}
-    </StyledLabel>
+    </LabelPrimitive.Root>
   );
 };
-
-const StyledLabel = styled(LabelPrimitive.Root)`
-  font-size: ${({ theme }) => theme.font.size.semiMedium};
-  font-weight: 800;
-  color: ${({ theme }) => theme.colors.secondaryBg};
-  user-select: none;
-  margin-bottom: 2px;
-  letter-spacing: 0.4px;
-`;
 
 export { FormLabel };

@@ -1,63 +1,40 @@
-//Styles
-import styled from "styled-components";
-//Components
-import { ListElement } from "@components";
 //Icons
 import { IoMdMail } from "react-icons/io";
 import { AiFillPhone } from "react-icons/ai";
 
 const ContactInfo = () => {
   return (
-    <Wrapper>
-      <StyledHeading>NAPISZ DO MNIE</StyledHeading>
-      <StyledText>
+    <div className="flex flex-col self-center max-w-[600px] w-full px-2.5 contactMedium:self-start">
+      <h1 className="m-0 text-secondaryBg text-xxxlarge font-extrabold hidden contactMedium:inline">
+        NAPISZ DO MNIE
+      </h1>
+      <p className="m-0 mb-[25px] text-secondaryBg text-large text-justify contactMedium:text-left contactMedium:text-xlarge contactMedium:mb-5">
         Jeśli podobają się Państwu moje zdjęcia, zapytajcie proszę o termin,
         ofertę oraz warunki współpracy.
         <br />
         Na wszystkie maile staram się odpowiedzieć jak najszybciej.
-      </StyledText>
+      </p>
       <ListElement icon={<AiFillPhone />} text="+48 724 241 144" />
       <ListElement icon={<IoMdMail />} text="kontakt@lukaszponiatowski.pl" />
-    </Wrapper>
+    </div>
   );
 };
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-self: start;
-  max-width: 600px;
-  width: 100%;
-  padding: 0 10px;
-
-  @media screen and (max-width: 1024px) {
-    align-self: center;
-  }
-`;
-
-const StyledText = styled.p`
-  margin: 0;
-  margin-bottom: 20px;
-  color: ${({ theme }) => theme.colors.secondaryBg};
-  font-size: ${({ theme }) => theme.font.size.xlarge};
-  letter-spacing: 0.4px;
-
-  @media screen and (max-width: 1024px) {
-    text-align: justify;
-    font-size: ${({ theme }) => theme.font.size.large};
-    margin-bottom: 25px;
-  }
-`;
-
-const StyledHeading = styled.h1`
-  margin: 0;
-  color: ${({ theme }) => theme.colors.secondaryBg};
-  font-size: ${({ theme }) => theme.font.size.xxxlarge};
-  font-weight: 800;
-
-  @media screen and (max-width: 1024px) {
-    display: none;
-  }
-`;
+const ListElement = ({
+  icon,
+  text,
+}: {
+  icon: React.ReactElement;
+  text: string;
+}) => {
+  return (
+    <div className="flex items-center justify-start max-w-full mb-2.5 break-all whitespace-pre-wrap">
+      <div className="static flex items-center justify-center flex-shrink-0 w-[30px] h-[30px] mr-2.5 rounded-full bg-transparent text-secondaryBg text-large transition-colors">
+        {icon}
+      </div>
+      <span className="text-secondaryBg text-medium font-semibold">{text}</span>
+    </div>
+  );
+};
 
 export { ContactInfo };

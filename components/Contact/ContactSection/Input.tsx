@@ -1,33 +1,22 @@
 //Styles
+import clsx from "clsx";
 import styled from "styled-components";
 
 const Input = ({ ...props }) => {
   return (
     <StyledInputWrapper>
-      <StyledInput autoComplete="on" {...props} />
+      <input
+        autoComplete="on"
+        {...props}
+        className={clsx(
+          "w-full p-2.5 mb-[5px] bg-mainBg border-solid border-b-2 border-b-secondaryBg rounded-[5px_5px_0px_0px] text-secondaryBg text-medium font-bold transition-shadow",
+          "focus:outline-none focus:shadow-[0px_-10px_15px_-15px_rgb(70,70,70)_inset]",
+          "focus-visible:outline-none focus-visible:shadow-[0px_-10px_15px_-15px_rgb(70,70,70)_inset]"
+        )}
+      />
     </StyledInputWrapper>
   );
 };
-
-const StyledInput = styled.input`
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 5px;
-  background-color: ${({ theme }) => theme.colors.mainBg};
-  border: none;
-  border-bottom: 2px solid ${({ theme }) => theme.colors.secondaryBg};
-  border-radius: 5px 5px 0 0;
-  color: ${({ theme }) => theme.colors.secondaryBg};
-  font-size: ${({ theme }) => theme.font.size.medium};
-  font-weight: 700;
-  transition: box-shadow 0.3s;
-
-  :focus-visible,
-  :focus {
-    outline: none;
-    box-shadow: rgb(70, 70, 70) 0px -10px 15px -15px inset;
-  }
-`;
 
 const StyledInputWrapper = styled.div`
   width: 100%;

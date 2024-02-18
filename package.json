@@ -19,6 +19,7 @@
     "@radix-ui/react-label": "^0.1.5",
     "@types/styled-components": "^5.1.34",
     "@xstate/react": "^3.2.2",
+    "clsx": "^2.1.0",
     "formik": "^2.4.5",
     "next": "12.1.5",
     "react": "^17.0.2",
