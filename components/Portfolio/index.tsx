@@ -1,2 +1,2 @@
 export * from "./PortfolioPage";
-export * from "./ImgGallerySection";
+export * from "./ImgGallery";

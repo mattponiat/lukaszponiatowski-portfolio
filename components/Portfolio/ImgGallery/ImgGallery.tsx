@@ -63,9 +63,15 @@ const ImgGallery = () => {
         },
       }}
     >
-      <Wrapper onContextMenu={(e) => e.preventDefault()}>
+      <div
+        onContextMenu={(e) => e.preventDefault()}
+        className="grid grid-cols-portfolioGrid gap-[9px] max-w-full px-2.5"
+      >
         {images.map((image, index) => (
-          <ImageWrapper key={index}>
+          <div
+            key={index}
+            className="max-w-full cursor-zoom-in transition-all overflow-hidden hover:opacity-80"
+          >
             <Image
               src={image}
               alt=""
@@ -78,33 +84,11 @@ const ImgGallery = () => {
               quality={100}
               sizes="(max-width: 767px) 250px, (max-width: 991px) 260px, 400px"
             />
-          </ImageWrapper>
+          </div>
         ))}
-      </Wrapper>
+      </div>
     </SRLWrapper>
   );
 };
-
-const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(min(100%/3, max(300px, 100%/8)), 1fr)
-  );
-  gap: 9px;
-  max-width: 100%;
-  padding-inline: 10px;
-`;
-
-const ImageWrapper = styled.div`
-  max-width: 100%;
-  cursor: zoom-in;
-  transition: transform 0.3s ease-in-out, opacity 0.25s ease-out;
-  overflow: hidden;
-
-  :hover {
-    opacity: 0.8;
-  }
-`;
 
 export { ImgGallery };
