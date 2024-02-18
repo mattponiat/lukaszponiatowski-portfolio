@@ -92,7 +92,6 @@ const ContactForm = () => {
 
   const resetForm = () => send("RESET");
 
-  console.log(process.env.NEXT_PUBLIC_CONTACT_FORM_API);
   const handleOnSubmit = async (values: FormValues) => {
     try {
       send("SEND");
