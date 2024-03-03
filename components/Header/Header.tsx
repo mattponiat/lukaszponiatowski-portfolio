@@ -74,7 +74,7 @@ const Header = () => {
                     <CloseIcon />
                   </IconButton>
                   <nav className="flex flex-col justify-center items-center mt-auto mx-0 mb-[290px]">
-                    <HeaderLink handleClose={handleClose} href="/">
+                    <HeaderLink handleClose={handleClose} href="o-mnie">
                       O MNIE
                     </HeaderLink>
                     <HeaderLink handleClose={handleClose} href="/portfolio">
