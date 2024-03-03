@@ -1,25 +1,47 @@
-//Styles
-import styled from "styled-components";
-//Components
-import { InfoSection, DescSection, ImgCarouselSection } from "@components";
+import Image from "next/image";
+import React, { useState, useEffect } from "react";
+import { useWindowSize } from "usehooks-ts";
 
 const HomePage = () => {
+  const images = [
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/HomePage/h1.jpg",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/HomePage/h2.jpg",
+  ];
+
+  const mobileImages = [
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/HomePage/h1-min.jpg",
+    "https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/HomePage/h2-min.jpg",
+  ];
+
+  const { width } = useWindowSize();
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    if (width <= 768) {
+      const randomIndex = Math.floor(Math.random() * mobileImages.length);
+      setCurrentImageIndex(randomIndex);
+    } else {
+      const randomIndex = Math.floor(Math.random() * images.length);
+      setCurrentImageIndex(randomIndex);
+    }
+  }, []);
+
   return (
-    <Wrapper>
-      <InfoSection
-        titleSize={52}
-        title="ŁUKASZ PONIATOWSKI"
-        about="Witaj, bardzo się cieszę, że tutaj jesteś. Korzystając z okazji pragnę zaprosić Cię do zapoznania się z moją osobą, a także portfolio stworzonym specjalnie z myślą o Tobie. Wykonuje fotoreportaże z uroczystości okolicznościowych, jednak to nie wszystko, co posiadam w swojej ofercie."
+    <main className="h-[calc(100vh-68px)] max-w-full">
+      <Image
+        width={6}
+        height={3}
+        layout="fill"
+        src={
+          width <= 768
+            ? mobileImages[currentImageIndex]
+            : images[currentImageIndex]
+        }
+        alt={`Home banner ${currentImageIndex + 1}`}
       />
-      <ImgCarouselSection />
-      <DescSection />
-    </Wrapper>
+    </main>
   );
 };
-
-const Wrapper = styled.main`
-  min-height: 100vh;
-  max-width: 100%;
-`;
 
 export { HomePage };

@@ -2,16 +2,12 @@
 import clsx from "clsx";
 //Components
 import { ContactForm, ContactInfo } from "@components";
-//Hooks
-import { useWindowSize } from "usehooks-ts";
 
 const ContactPage = () => {
-  const { height } = useWindowSize();
-
   return (
     <main
       className={clsx(
-        `flex items-center justify-center max-w-full min-h-screen lg:min-h-[${height}px]`
+        `flex items-center justify-center max-w-full lg:h-[calc(100vh-68px)]`
       )}
     >
       <section

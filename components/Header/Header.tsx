@@ -2,6 +2,7 @@ import * as React from "react";
 //Components
 import { Navbar } from "@components";
 import Link from "next/link";
+import Image from "next/image";
 //Hooks
 import { useWindowSize } from "usehooks-ts";
 //MUI
@@ -37,16 +38,18 @@ const Header = () => {
   });
 
   return (
-    <header className="max-w-full min-h-[70px] bg-mainBg shadow-[0px_2px_4px_rgba(0,0,0,0.1)]">
+    <header className="max-w-full min-h-[70px] max-h-[70px] bg-mainBg shadow-[0px_2px_4px_rgba(0,0,0,0.1)]">
       {isLoading === false && (
         <div className="flex sticky items-center justify-end md:justify-center max-w-full min-h-[70px] bg-mainbg shadow-[0px_2px_4px_rgba(0,0,0,0.1)]">
           {width <= 768 ? (
             <>
-              <div className="flex items-center justify-between w-full">
+              <div className="flex items-center justify-between w-full max-h-[70px] pl-3">
                 <Link href="/home" passHref>
-                  <span className="p-4 cursor-pointer text-header font-extrabold text-large transition-colors hover:text-headerHover">
-                    lukaszponiatowski.pl
-                  </span>
+                  <img
+                    src="/logo.png"
+                    alt="Logo"
+                    className="cursor-pointer h-[35px]"
+                  />
                 </Link>
                 <button onClick={handleOpen} className="px-2">
                   <HamburgerIcon />
@@ -85,11 +88,13 @@ const Header = () => {
               </Dialog>
             </>
           ) : (
-            <div className="flex w-full justify-between items-center pl-6">
+            <div className="flex min-h-[70px] max-h-[70px] w-full justify-between items-center pl-12">
               <Link href="/home" passHref>
-                <span className="py-4 cursor-pointer text-header font-extrabold text-xlarge transition-colors hover:text-headerHover">
-                  lukaszponiatowski.pl
-                </span>
+                <img
+                  src="/logo.png"
+                  alt="Logo"
+                  className="cursor-pointer h-[35px]"
+                />
               </Link>
               <Navbar />
             </div>
