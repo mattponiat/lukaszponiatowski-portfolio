@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { useWindowSize } from "usehooks-ts";
@@ -28,7 +29,12 @@ const HomePage = () => {
   }, []);
 
   return (
-    <main className="h-[calc(100vh-60px)] max-w-full">
+    <main
+      className={clsx(
+        "max-w-full",
+        width <= 768 ? "h-[calc(100vh-100px)]" : "h-[calc(100vh-60px)]"
+      )}
+    >
       <div className="h-fit flex items-top justify-center">
         <Image
           width={0}

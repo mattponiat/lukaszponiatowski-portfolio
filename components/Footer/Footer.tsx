@@ -6,7 +6,7 @@ import { FiInstagram } from "react-icons/fi";
 
 const Footer = () => {
   return (
-    <footer className="flex items-center min-h-[72px] max-h-[72px] max-w-full py-0 px-[30px] bg-mainBg z-50">
+    <footer className="flex items-center justify-between gap-4 min-h-[72px] max-h-[72px] max-w-full w-full py-0 px-6 bg-mainBg z-50">
       <div className="flex gap-4">
         <SocialMediaIcon
           icon={<FiInstagram />}
@@ -21,7 +21,7 @@ const Footer = () => {
           href="https://www.linkedin.com/in/%C5%82ukasz-poniatowski-6a5bb4238/"
         />
       </div>
-      <span className="text-xsmall text-gray-400 ml-auto">
+      <span className="text-xsmall text-gray-400">
         Created by{" "}
         <Link href="https://www.mattponiat.com.pl/" passHref>
           <a
