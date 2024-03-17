@@ -31,23 +31,22 @@ const HomePage = () => {
   return (
     <main
       className={clsx(
-        "max-w-full",
+        "max-w-full w-full",
         width <= 768 ? "h-[calc(100vh-100px)]" : "h-[calc(100vh-60px)]"
       )}
     >
-      <div className="h-fit flex items-top justify-center">
+      <div className="max-w-full w-full h-fit">
         <Image
           width={0}
           height={0}
           layout="fill"
-          objectFit="contain"
+          objectFit="cover"
           src={
             width <= 768
               ? mobileImages[currentImageIndex]
               : images[currentImageIndex]
           }
           alt={`Home banner ${currentImageIndex + 1}`}
-          className="max-w-full"
         />
       </div>
     </main>
