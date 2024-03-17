@@ -5,7 +5,7 @@ import { AiFillPhone } from "react-icons/ai";
 const ContactInfo = () => {
   return (
     <div className="flex flex-col self-center max-w-[600px] w-full contactMedium:self-start my-auto">
-      <h1 className="m-0 text-secondaryBg text-xxxlarge leading-[40px] font-extralight hidden contactMedium:inline tracking-wide">
+      <h1 className="m-0 text-secondaryBg text-xxxlarge leading-[40px] font-light hidden contactMedium:inline tracking-wide">
         SKONTAKTUJ SIĘ
       </h1>
       <span className="mb-4 text-secondaryBg text-xxlarge font-extrabold hidden contactMedium:inline tracking-wide">
