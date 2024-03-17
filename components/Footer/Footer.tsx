@@ -6,7 +6,7 @@ import { FiInstagram } from "react-icons/fi";
 
 const Footer = () => {
   return (
-    <footer className="flex items-center min-h-[72px] max-h-[72px] max-w-full py-0 px-[30px] bg-mainBg">
+    <footer className="flex items-center min-h-[72px] max-h-[72px] max-w-full py-0 px-[30px] bg-mainBg z-50">
       <div className="flex gap-4">
         <SocialMediaIcon
           icon={<FiInstagram />}

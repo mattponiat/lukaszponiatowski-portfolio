@@ -28,18 +28,22 @@ const HomePage = () => {
   }, []);
 
   return (
-    <main className="h-[calc(100vh-68px)] max-w-full">
-      <Image
-        width={6}
-        height={3}
-        layout="fill"
-        src={
-          width <= 768
-            ? mobileImages[currentImageIndex]
-            : images[currentImageIndex]
-        }
-        alt={`Home banner ${currentImageIndex + 1}`}
-      />
+    <main className="h-[calc(100vh-60px)] max-w-full">
+      <div className="h-fit flex items-top justify-center">
+        <Image
+          width={0}
+          height={0}
+          layout="fill"
+          objectFit="contain"
+          src={
+            width <= 768
+              ? mobileImages[currentImageIndex]
+              : images[currentImageIndex]
+          }
+          alt={`Home banner ${currentImageIndex + 1}`}
+          className="max-w-full"
+        />
+      </div>
     </main>
   );
 };

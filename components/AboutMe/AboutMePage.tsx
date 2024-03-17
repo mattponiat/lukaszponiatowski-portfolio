@@ -8,9 +8,7 @@ const AboutMePage = () => {
           className="w-[495px] h-[635px]"
         />
         <div className="flex flex-col gap-4 max-w-[590px] mb-[100px]">
-          <span className="text-xxlarge text-[#999999] textStroke">
-            FOTOGRAF KALISZ
-          </span>
+          <span className="text-xxlarge text-[#999999]">FOTOGRAF KALISZ</span>
           <span className="text-[#999999] text-[18px] leading-[24px] descriptionStroke">
             Nazywam się Łukasz Poniatowski, realizuję zlecenia fotograficzne na
             terenie całej Polski. Dokumentuję Wasze uroczystości oraz ważne
