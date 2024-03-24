@@ -1,15 +1,15 @@
 const AboutMePage = () => {
   return (
-    <main className="h-[calc(100vh-68px)] max-w-full">
-      <div className="flex items-center justify-center gap-10 h-[calc(100vh-68px)]">
+    <main className="min-h-[calc(100vh-70px)] h-full max-w-full">
+      <div className="flex lg:flex-row flex-col items-center justify-center gap-10 min-h-[calc(100vh-68px)] p-4">
         <img
           src="https://s3.eu-west-3.amazonaws.com/data.lukaszponiatowski.pl/AboutMe/aboutMe.jpg"
           alt="about me"
-          className="w-[495px] h-[635px]"
+          className="w-auto md:h-[635px] h-auto object-cover object-scale-down"
         />
         <div className="flex flex-col gap-4 max-w-[590px] mb-[100px]">
           <span className="text-xxlarge text-[#999999]">FOTOGRAF KALISZ</span>
-          <span className="text-[#999999] text-[18px] leading-[24px] descriptionStroke">
+          <span className="text-[#999999] text-[18px] leading-[24px]">
             Nazywam się Łukasz Poniatowski, realizuję zlecenia fotograficzne na
             terenie całej Polski. Dokumentuję Wasze uroczystości oraz ważne
             wydarzenia rodzinne. Reportaż traktuję jako opowieść o

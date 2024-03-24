@@ -32,7 +32,9 @@ const HomePage = () => {
     <main
       className={clsx(
         "max-w-full w-full",
-        width <= 768 ? "h-[calc(100vh-100px)]" : "h-[calc(100vh-60px)]"
+        width <= 768
+          ? "min-h-[calc(100vh-70px)] h-full"
+          : "min-h-[calc(100vh-70px)] h-full"
       )}
     >
       <div className="max-w-full w-full h-fit">
