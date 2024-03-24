@@ -12,7 +12,7 @@ const ContactInfo = () => {
         ze mną
       </span>
       <p className="m-0 mb-[25px] text-secondaryBg text-large text-justify contactMedium:text-left contactMedium:text-xlarge contactMedium:mb-5">
-        Wypełnił poniższy formularz i zapytaj o termin oraz warunki współpracy.
+        Wypełnił formularz i zapytaj o termin oraz warunki współpracy.
         <br />
         Sprawdź przygotowaną dla Ciebie ofertę.
       </p>
